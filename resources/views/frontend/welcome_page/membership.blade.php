@@ -16,7 +16,7 @@
                     ['name' => 'Society of Surgeons of Bangladesh', 'image' => null],
                     ['name' => 'The Society of Endo-Laparoscopic Surgeons of Bangladesh (SELSB)', 'image' => null],
                     ['name' => 'The Royal College of Surgeons of Edinburgh', 'image' => null],
-                    ['name' => 'acpgbi.org.uk', 'image' => null],
+                    ['name' => 'The Association of Coloproctology of Great Britain & Ireland', 'image' => null],
                     ['name' => 'The Royal College of Physicians and Surgeons of Glasgow', 'image' => null],
                     ['name' => 'American Society of Colon and Rectal Surgeons (ASCRS)', 'image' => null],
                     ['name' => 'American College of Surgeons', 'image' => null],
