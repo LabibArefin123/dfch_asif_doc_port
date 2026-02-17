@@ -5,17 +5,6 @@
         @php
             $slides = [
                 [
-                    'image' => 'image_1.png',
-                    'align' => 'right',
-                    'name' => 'Prof. Dr. AKM Fazlul Haque',
-                    'designation' => 'Fellow, Colorectal Surgery (Singapore)',
-                    'details' => 'International Scholar, Colorectal Surgery (USA)<br>
-                        Founder Chairman (RETD), Department of Colorectal Surgery<br>
-                        Bangladesh Medical University, Dhaka<br>
-                        <strong>25 Years of Dedicated Service</strong>',
-                    'route' => route('doc_1'),
-                ],
-                [
                     'image' => 'image_2.png',
                     'align' => 'left',
                     'name' => 'Dr. Asif Almas Haque',

@@ -12,7 +12,7 @@
         @hasSection('title')
             @yield('title')
         @else
-            {{ config('app.name', 'Dr. Fazlul Haque Colorectal Hospital Limited (DFCH)') }}
+            {{ config('app.name', 'Dr. Asif Almas Haque') }}
         @endif
     </title>
 

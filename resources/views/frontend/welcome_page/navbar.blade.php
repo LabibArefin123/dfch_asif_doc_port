@@ -39,10 +39,11 @@
         <!-- Center Menu -->
         <div class="collapse navbar-collapse justify-content-center order-2" id="navbarCollapse">
             <ul class="navbar-nav">
+
                 <li class="nav-item">
                     <a href="{{ route('welcome') }}"
                         class="nav-link custom-link {{ request()->routeIs('welcome') ? 'active' : '' }}">
-                        Overview
+                        Home
                     </a>
                 </li>
 
@@ -51,56 +52,40 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#departments" class="nav-link custom-link">Departments</a>
-                </li>
-
-                <li class="nav-item dropdown" id="facility_dropdown">
-                    <a href="#facilities" class="nav-link custom-link dropdown-toggle" role="button"
-                        aria-expanded="false">
-                        Facilities
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a href="{{ route('facility_1') }}" class="dropdown-item">Emergency Department</a></li>
-                        <li><a href="{{ route('facility_2') }}" class="dropdown-item">Intensive Care Unit (ICU)</a></li>
-                        <li><a href="{{ route('facility_3') }}" class="dropdown-item">Operation Theatre (OT)</a></li>
-                        <li><a href="{{ route('facility_4') }}" class="dropdown-item">Post Operative Room</a></li>
-                        <li><a href="{{ route('facility_5') }}" class="dropdown-item">Ward</a></li>
-                        <li><a href="{{ route('facility_6') }}" class="dropdown-item">Cabin</a></li>
-                        <li><a href="{{ route('facility_7') }}" class="dropdown-item">Laboratory</a></li>
-                        <li><a href="{{ route('facility_8') }}" class="dropdown-item">Radiology & Imaging</a></li>
-                        <li><a href="{{ route('facility_9') }}" class="dropdown-item">ECG</a></li>
-                        <li><a href="{{ route('facility_10') }}" class="dropdown-item">Colonoscopy</a></li>
-                        <li><a href="{{ route('facility_11') }}" class="dropdown-item">Pharmacy</a></li>
-                        <li><a href="{{ route('facility_12') }}" class="dropdown-item">24-Hour Ambulance Service</a>
-                        </li>
-                    </ul>
+                    <a href="#specializations" class="nav-link custom-link">Specializations</a>
                 </li>
 
                 <li class="nav-item">
                     <a href="#services" class="nav-link custom-link">Services</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a href="#specialists" class="nav-link custom-link dropdown-toggle">Our Specialists</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{ route('doc_1') }}" class="dropdown-item">Prof. Dr. AKM Fazlul Haque</a></li>
-                        <li><a href="{{ route('doc_2') }}" class="dropdown-item">Dr. Asif Almas Haque</a></li>
-                        <li><a href="{{ route('doc_3') }}" class="dropdown-item">Dr. Fatema Sharmin (Anny)</a></li>
-                        <li><a href="{{ route('doc_4') }}" class="dropdown-item">Dr. Sakib Sarwat Haque</a></li>
-                        <li><a href="{{ route('doc_5') }}" class="dropdown-item">Dr. Asma Husain Noora</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link custom-link">Experience</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#goals" class="nav-link custom-link">Our Goals</a>
+                    <a href="#gallery" class="nav-link custom-link">Gallery</a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="#reviews" class="nav-link custom-link">Patient Reviews</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#faq" class="nav-link custom-link">FAQ</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link custom-link">Contact</a>
+                </li>
+
             </ul>
         </div>
 
+
         <!-- Right: Login Button -->
         <div class="order-3 ml-auto d-flex align-items-center">
-            <a href="{{ route('login') }}" class="btn login-btn" style="margin-right: 10px;">Hospital Login</a>
+           <a href="#appointment" class="btn login-btn">Book Appointment</a>
         </div>
 
     </div>
@@ -128,31 +113,31 @@
 
 <!------start of facility js--->
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdown = document.getElementById('facility_dropdown');
-    const toggleLink = dropdown.querySelector('.dropdown-toggle');
-    const menu = dropdown.querySelector('.dropdown-menu');
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdown = document.getElementById('facility_dropdown');
+        const toggleLink = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
 
-    // Toggle on click
-    toggleLink.addEventListener('click', function (e) {
-        e.preventDefault();
+        // Toggle on click
+        toggleLink.addEventListener('click', function(e) {
+            e.preventDefault();
 
-        const isOpen = menu.classList.contains('show');
-        document.querySelectorAll('.dropdown-menu.show').forEach(el => {
-            el.classList.remove('show');
+            const isOpen = menu.classList.contains('show');
+            document.querySelectorAll('.dropdown-menu.show').forEach(el => {
+                el.classList.remove('show');
+            });
+
+            menu.classList.toggle('show', !isOpen);
+            toggleLink.setAttribute('aria-expanded', !isOpen);
         });
 
-        menu.classList.toggle('show', !isOpen);
-        toggleLink.setAttribute('aria-expanded', !isOpen);
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                menu.classList.remove('show');
+                toggleLink.setAttribute('aria-expanded', 'false');
+            }
+        });
     });
-
-    // Close when clicking outside
-    document.addEventListener('click', function (e) {
-        if (!dropdown.contains(e.target)) {
-            menu.classList.remove('show');
-            toggleLink.setAttribute('aria-expanded', 'false');
-        }
-    });
-});
 </script>
 <!------end of facility js--->
