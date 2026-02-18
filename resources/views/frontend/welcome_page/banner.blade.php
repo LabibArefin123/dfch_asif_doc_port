@@ -38,7 +38,7 @@
 
 
                             {{-- Text Content --}}
-                            <div class="col-md-6 text-white z-2">
+                            <div class="col-md-6 hero-content z-2">
                                 <h2 class="fw-bold display-6 mb-2">{{ $slide['name'] }}</h2>
                                 <p class="fs-5 mb-2">{{ $slide['designation'] }}</p>
                                 <p class="lh-lg opacity-90">{!! $slide['details'] !!}</p>
@@ -58,14 +58,6 @@
                 </div>
             </div>
         @endforeach
-
-        {{-- Dots --}}
-        <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 z-3 d-flex gap-2">
-            @foreach ($slides as $i => $slide)
-                <span class="dot" onclick="goToSlide({{ $i }})"></span>
-            @endforeach
-        </div>
-
     </div>
 </section>
 <script>
