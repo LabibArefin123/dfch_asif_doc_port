@@ -25,7 +25,7 @@
                     ],
                     [
                         'name' => 'The Royal College of Surgeons of Edinburgh',
-                        'image' => asset('uploads/images/welcome_page/membership/image_3.JPG'),
+                        'image' => asset('uploads/images/welcome_page/membership/image_3.png'),
                         'link' => 'https://www.rcsed.ac.uk/',
                     ],
                     [
@@ -53,7 +53,11 @@
                         'image' => asset('uploads/images/welcome_page/membership/image_8.jpg'),
                         'link' => 'https://elsasociety.org/',
                     ],
-                    ['name' => 'Colon and Rectal Surgeons of Bangladesh', 'image' => null, 'link' => '#'],
+                    [
+                        'name' => 'Colon and Rectal Surgeons of Bangladesh',
+                        'image' => asset('uploads/images/welcome_page/membership/image_9.JPG'),
+                        'link' => 'https://www.facebook.com/bscrsbd/',
+                    ],
                 ];
 
                 $defaultImage = asset('uploads/images/frontend/default_membership.png');
@@ -63,7 +67,7 @@
                 <div class="col-md-6 col-lg-4">
                     <a href="{{ $membership['link'] }}" target="_blank" class="text-decoration-none">
 
-                        <div class="membership-card p-3 bg-white shadow-sm rounded text-center h-100">
+                      <div class="membership-card text-center">
                             <img src="{{ $membership['image'] ?? $defaultImage }}" alt="{{ $membership['name'] }}"
                                 class="membership-img">
 
