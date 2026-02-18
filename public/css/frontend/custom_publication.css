@@ -28,41 +28,72 @@
     letter-spacing: 3px;
     color: #555;
     position: relative;
-    display: inline-block;
-    margin-bottom: 60px;
+    display: block;
+    text-align: center;
+    margin-bottom: 70px;
 }
 
-/* Green curved main line */
+/* Green curved animated line */
+/* Green curved animated line */
 .section-title::after {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 10%;
     bottom: -15px;
-    transform: translateX(-50%);
     width: 80%;
     height: 8px;
     background: #5fbf63;
     border-radius: 50px;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    animation: drawLine 2.5s ease-in-out infinite alternate;
 }
 
-/* Thin accent line */
+/* Animation */
+
+/* Thin blue accent line */
 .section-title::before {
     content: "";
     position: absolute;
-    left: 50%;
-    bottom: -25px;
-    transform: translateX(-50%);
+    left: 17.5%;
+    bottom: -28px;
     width: 65%;
     height: 3px;
     background: #2f80ed;
     border-radius: 50px;
 }
-/* Publication Cards */
 
+/* Animation */
+@keyframes drawLine {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    50% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    51% {
+        transform-origin: right;
+    }
+
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
+
+/* Publication Cards */
 .publication-list {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    max-width: 900px;
+    margin: 0 auto; /* centers everything */
 }
 
 .publication-card {
