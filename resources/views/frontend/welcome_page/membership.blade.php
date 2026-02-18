@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row mb-4">
             <div class="col text-center">
-                <h2 class="fw-bold text-warning">Professional Membership</h2>
+                <h2 class="">Professional Membership</h2>
                 <p class="small text-muted">Driving technology and excellence in colorectal surgery</p>
             </div>
         </div>
@@ -13,25 +13,59 @@
         <div class="row g-4 justify-content-center">
             @php
                 $memberships = [
-                    ['name' => 'Society of Surgeons of Bangladesh', 'image' => null],
-                    ['name' => 'The Society of Endo-Laparoscopic Surgeons of Bangladesh (SELSB)', 'image' => null],
-                    ['name' => 'The Royal College of Surgeons of Edinburgh', 'image' => null],
-                    ['name' => 'The Association of Coloproctology of Great Britain & Ireland', 'image' => null],
-                    ['name' => 'The Royal College of Physicians and Surgeons of Glasgow', 'image' => null],
-                    ['name' => 'American Society of Colon and Rectal Surgeons (ASCRS)', 'image' => null],
-                    ['name' => 'American College of Surgeons', 'image' => null],
-                    ['name' => 'The Endoscopic and Laparoscopic Surgeons of Asia (ELSA)', 'image' => null],
-                    ['name' => 'Colon and Rectal Surgeons of Bangladesh', 'image' => null],
+                    [
+                        'name' => 'Society of Surgeons of Bangladesh',
+                        'image' => asset('uploads/images/welcome_page/membership/image_1.png'),
+                        'link' => 'https://www.sosb-bd.org/',
+                    ],
+                    [
+                        'name' => 'Society of Endo-Laparoscopic Surgeons of Bangladesh (SELSB)',
+                        'image' => asset('uploads/images/welcome_page/membership/image_2.jpg'),
+                        'link' => 'https://selsb-bd.org/',
+                    ],
+                    [
+                        'name' => 'The Royal College of Surgeons of Edinburgh',
+                        'image' => asset('uploads/images/welcome_page/membership/image_3.JPG'),
+                        'link' => 'https://www.rcsed.ac.uk/',
+                    ],
+                    [
+                        'name' => 'The Association of Coloproctology of Great Britain & Ireland',
+                        'image' => asset('uploads/images/welcome_page/membership/image_4.png'),
+                        'link' => 'https://www.acpgbi.org.uk/',
+                    ],
+                    [
+                        'name' => 'The Royal College of Physicians and Surgeons of Glasgow',
+                        'image' => asset('uploads/images/welcome_page/membership/image_5.JPG'),
+                        'link' => 'https://rcpsg.ac.uk/',
+                    ],
+                    [
+                        'name' => 'American Society of Colon and Rectal Surgeons (ASCRS)',
+                        'image' => asset('uploads/images/welcome_page/membership/image_6.png'),
+                        'link' => 'https://fascrs.org/',
+                    ],
+                    [
+                        'name' => 'American College of Surgeons',
+                        'image' => asset('uploads/images/welcome_page/membership/image_7.JPG'),
+                        'link' => 'https://www.facs.org/',
+                    ],
+                    [
+                        'name' => 'The Endoscopic and Laparoscopic Surgeons of Asia (ELSA)',
+                        'image' => asset('uploads/images/welcome_page/membership/image_8.jpg'),
+                        'link' => 'https://elsasociety.org/',
+                    ],
+                    ['name' => 'Colon and Rectal Surgeons of Bangladesh', 'image' => null, 'link' => '#'],
                 ];
+
                 $defaultImage = asset('uploads/images/frontend/default_membership.png');
             @endphp
 
             @foreach ($memberships as $membership)
                 <div class="col-md-6 col-lg-4">
-                    <a href="https://www.google.com" target="_blank" class="text-decoration-none">
+                    <a href="{{ $membership['link'] }}" target="_blank" class="text-decoration-none">
+
                         <div class="membership-card p-3 bg-white shadow-sm rounded text-center h-100">
                             <img src="{{ $membership['image'] ?? $defaultImage }}" alt="{{ $membership['name'] }}"
-                                class="membership-img mb-2 rounded-circle">
+                                class="membership-img">
 
                             <p class="mb-0 fw-semibold small text-dark">{{ $membership['name'] }}</p>
                         </div>

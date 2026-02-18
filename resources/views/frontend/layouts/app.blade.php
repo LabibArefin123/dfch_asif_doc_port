@@ -17,7 +17,7 @@
     </title>
 
     <!-- Fonts -->
-    <link rel="icon" type="image/png" href="{{ asset('uploads/images/icon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('uploads/images/icon2.JPG') }}">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">

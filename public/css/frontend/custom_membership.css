@@ -8,10 +8,10 @@
 }
 
 .membership-img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border: 2px solid #ffc107;
+    max-height: 250px;
+    width: 80%;
+    object-fit: cover; /* Prevent stretching */
+    object-position: center;
 }
 
 .membership-card p {
