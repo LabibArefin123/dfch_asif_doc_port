@@ -33,7 +33,21 @@ class WelcomePageController extends Controller
     {
         return view('frontend.conditions.fistula');
     }
+    
+    public function fissure()
+    {
+        return view('frontend.conditions.fissure');
+    }
 
+    public function colorectal_cancer()
+    {
+        return view('frontend.conditions.colorectal_cancer');
+    }
+
+    public function ibs()
+    {
+        return view('frontend.conditions.ibs');
+    }
 
     public function system_problem_store(Request $request)
     {

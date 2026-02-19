@@ -25,6 +25,9 @@ Route::get('/about', [WelcomePageController::class, 'about'])->name('about');
 Route::get('/book', [WelcomePageController::class, 'book'])->name('book');
 Route::get('/piles', [WelcomePageController::class, 'piles'])->name('piles');
 Route::get('/fistula', [WelcomePageController::class, 'fistula'])->name('fistula');
+Route::get('/fissure', [WelcomePageController::class, 'fissure'])->name('fissure');
+Route::get('/colorectal_cancer', [WelcomePageController::class, 'colorectal_cancer'])->name('colorectal_cancer');
+Route::get('/irritable_bowel_syndrome(IBS)', [WelcomePageController::class, 'ibs'])->name('ibs');
 Route::post('/system-problem/store', [WelcomePageController::class, 'system_problem_store'])->name('system_problem.store');
 
 Route::get('/user_profile', function () {
