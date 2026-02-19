@@ -21,28 +21,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 Route::get('/', [WelcomePageController::class, 'index'])->name('welcome');
+Route::get('/about', [WelcomePageController::class, 'about'])->name('about');
 Route::post('/system-problem/store', [WelcomePageController::class, 'system_problem_store'])->name('system_problem.store');
-
-//Specialist Part
-Route::get('/prof-dr-akm-fazlul-hoque', [WelcomePageController::class, 'doc_1'])->name('doc_1');
-Route::get('/dr-asif-almas-haque', [WelcomePageController::class, 'doc_2'])->name('doc_2');
-Route::get('/dr-fatema-sharmin-anny', [WelcomePageController::class, 'doc_3'])->name('doc_3');
-Route::get('/dr-sakib-sarwat-haque', [WelcomePageController::class, 'doc_4'])->name('doc_4');
-Route::get('/dr-asma-husain-noora', [WelcomePageController::class, 'doc_5'])->name('doc_5');
-
-//Facility Part 
-Route::get('/emergency-department', [WelcomePageController::class, 'facility_1_emergency'])->name('facility_1');
-Route::get('/intensive-care-unit-icu', [WelcomePageController::class, 'facility_2_icu'])->name('facility_2');
-Route::get('/operation-theater-ot', [WelcomePageController::class, 'facility_3_ot'])->name('facility_3');
-Route::get('/post-operative-recovery-room', [WelcomePageController::class, 'facility_4_post_op'])->name('facility_4');
-Route::get('/ward', [WelcomePageController::class, 'facility_5_ward'])->name('facility_5');
-Route::get('/cabin', [WelcomePageController::class, 'facility_6_cabin'])->name('facility_6');
-Route::get('/laboratory', [WelcomePageController::class, 'facility_7_laboratory'])->name('facility_7');
-Route::get('/radiology-and-imaging', [WelcomePageController::class, 'facility_8_radiology_and_image'])->name('facility_8');
-Route::get('/ecg', [WelcomePageController::class, 'facility_9_ecg'])->name('facility_9');
-Route::get('/colonoscopy', [WelcomePageController::class, 'facility_10_colonoscopy'])->name('facility_10');
-Route::get('/pharmacy', [WelcomePageController::class, 'facility_11_pharmacy'])->name('facility_11');
-Route::get('/24-hour-ambulance-service', [WelcomePageController::class, 'facility_12_emergency'])->name('facility_12');
 
 Route::get('/user_profile', function () {
     return view('user_profile');

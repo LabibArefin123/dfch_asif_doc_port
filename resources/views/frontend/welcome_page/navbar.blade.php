@@ -19,7 +19,12 @@
                     </a>
                 </li>
 
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item">
+                    <a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">
+                        About
+                    </a>
+                </li>
+
                 <li class="nav-item"><a href="#specializations" class="nav-link">Specializations</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>

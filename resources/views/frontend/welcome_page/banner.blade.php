@@ -12,7 +12,7 @@
                     'details' => 'FCPS (Surgery), FCPS (Colorectal Surgery), FRCS (ENG)<br>
                         Fellow of American College of Surgeons (FACS)<br>
                         Fellow of American Society of Colon & Rectal Surgeons (FASCRS)',
-                    'route' => route('doc_2'),
+                    'route' => route('about'),
                 ],
             ];
         @endphp
