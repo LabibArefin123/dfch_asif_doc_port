@@ -47,29 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/user_password_edit', [ProfileController::class, 'editPassword'])->name('user_password_edit');
     Route::get('/user_password_reset', [ProfileController::class, 'resetPassword'])->name('user_password_reset');
 
-    Route::get('/patients/recommend', [PatientController::class, 'patient_recommend'])->name('patients.recommend');
-    Route::get('patients/export-excel', [PatientController::class, 'exportExcel'])->name('patients.export.excel');
-    Route::get('patients/export-pdf', [PatientController::class, 'exportPdf'])->name('patients.export.pdf');
-    Route::post('patients/import-excel', [PatientController::class, 'importExcel'])->name('patients.import.excel');
-    Route::post('patients/import-word', [PatientController::class, 'importWord'])->name('patients.import.word');
-    Route::get('/patients/{id}/print-card', [PatientController::class, 'printCard'])->name('patients.print_card');
-    Route::post('patients/delete-selected', [PatientController::class, 'deleteSelected'])->name('patients.delete_selected');
-    Route::resource('patients', PatientController::class);
-
-    //Report Module
-    Route::get('daily_report', [ReportController::class, 'daily_report'])->name('report.daily');
-    Route::get('daily_report/pdf', [ReportController::class, 'daily_report_pdf'])->name('report.daily.pdf');
-    Route::get('reports/weekly', [ReportController::class, 'weekly_report'])->name('report.weekly');
-    Route::get('reports/weekly/pdf', [ReportController::class, 'weekly_report_pdf'])->name('report.weekly.pdf');
-    Route::get('reports/monthly', [ReportController::class, 'monthly_report'])->name('report.monthly');
-    Route::get('reports/monthly/pdf', [ReportController::class, 'monthly_report_pdf'])->name('report.monthly.pdf');
-    Route::get('reports/yearly', [ReportController::class, 'yearly_report'])->name('report.yearly');
-    Route::get('reports/yearly/pdf', [ReportController::class, 'yearly_report_pdf'])->name('report.yearly.pdf');
-    Route::get('daily_report/excel', [ReportController::class, 'daily_report_excel'])->name('report.daily.excel');
-    Route::get('reports/weekly/excel', [ReportController::class, 'weekly_report_excel'])->name('report.weekly.excel');
-    Route::get('reports/monthly/excel', [ReportController::class, 'monthly_report_excel'])->name('report.monthly.excel');
-    Route::get('reports/yearly/excel', [ReportController::class, 'yearly_report_excel'])->name('report.yearly.excel');
-
     //Setting Management
     Route::resource('roles', RoleController::class);
     Route::resource('permissions', PermissionController::class);
