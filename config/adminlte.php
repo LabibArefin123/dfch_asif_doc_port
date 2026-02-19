@@ -413,21 +413,6 @@ return [
                 ],
             ],
         ],
-
-        [
-            'text'    => 'Patient Management',
-            'icon'    => 'fas fa-user-injured',
-            'submenu' => [
-
-                [
-                    'text'  => 'Patient List',
-                    // 'route' => 'patients.index',
-                    // 'can'   => 'patients.index',
-                    'icon'  => 'fas fa-list',
-                ],
-
-            ],
-        ],
       
         [
             'text'    => 'Setting Management',

@@ -12,9 +12,64 @@
     display: flex;
     overflow: hidden;
     backdrop-filter: blur(18px);
-    background: rgba(103, 186, 255, 0.15);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-    transition: transform 0.8s ease;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #0061ff, #60efff);
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 97, 255, 0.4);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.problem-modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+}
+
+.problem-modal.show {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.problem-modal-content {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    width: 450px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* DEFAULT → LOGIN ON RIGHT */
@@ -162,7 +217,7 @@
     border-radius: 16px;
     padding: 24px;
     animation: slideUp 0.35s ease;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
 }
 
 .modal-header {

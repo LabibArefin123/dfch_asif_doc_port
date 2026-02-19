@@ -1,4 +1,5 @@
 @extends('frontend.layouts.app')
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 @section('content')
     <div class="login-wrapper">
@@ -6,51 +7,53 @@
 
             {{-- LEFT : ABOUT --}}
             <div class="about-slider">
-                <img src="{{ asset('uploads/images/login_page/logo.png') }}" class="hospital-logo" alt="DFCH Logo">
+                <img src="{{ asset('uploads/images/login_page/logo.png') }}" class="hospital-logo" alt="Dr. Asif Almas Haque">
 
-                {{-- SHORT ABOUT --}}
+                {{-- SHORT PROFILE --}}
                 <div class="about-content short" id="aboutShort">
-                    <h4 class="fw-bold mb-3">About The Hospital</h4>
+                    <h4 class="fw-bold mb-3">Dr. Asif Almas Haque</h4>
+
+                    <p class="mb-2">
+                        MBBS (SSMC), FCPS (Surgery), FCPS (Colorectal Surgery),
+                        FRCS (England, Glasgow, Edinburgh), FACS (USA), FASCRS (USA)
+                    </p>
+
                     <p>
-                        <strong>Dr. Fazlul Haque Colorectal Hospital Limited (DFCH)</strong> is a
-                        specialized center of excellence in colorectal surgery, established on
-                        <strong>23rd June 2024</strong>, committed to advanced and compassionate care.
+                        Consultant Colorectal, Laparoscopic & Laser Surgeon dedicated to
+                        advanced surgical precision, compassionate care, and patient-centered treatment.
                     </p>
 
                     <button class="btn btn-outline-light rounded-pill mt-3" onclick="toggleAbout(true)">
-                        More Information
+                        View Professional Profile
                     </button>
                 </div>
 
-                {{-- FULL ABOUT --}}
-                <div class="about-content full" id="aboutFull">
-                    <h4 class="fw-bold mb-3">A Legacy of Dedication & Innovation</h4>
+                {{-- FULL PROFILE --}}
+                <div class="about-content full" id="aboutFull" style="display:none;">
+                    <h4 class="fw-bold mb-3">Professional Overview</h4>
 
                     <p>
-                        Dr. Fazlul Haque Colorectal Hospital Limited stands as a beacon of excellence
-                        in colorectal surgery. Established on 23rd June 2024, the hospital is dedicated
-                        to providing unparalleled care through innovation and medical expertise.
+                        Dr. Asif Almas Haque is a highly qualified colorectal surgeon with
+                        extensive national and international training. With years of experience
+                        in general and colorectal surgery, he specializes in laparoscopic,
+                        laser, and advanced pelvic procedures.
                     </p>
 
-                    <h5 class="mt-3">Our Mission</h5>
-                    <p>
-                        To provide world-class colorectal care through innovative surgical practices,
-                        personalized treatment plans, and an unwavering commitment to patient well-being.
-                    </p>
-
-                    <h5 class="mt-3">Our Vision</h5>
-                    <p>
-                        To become a global leader in colorectal surgery by pioneering advancements,
-                        fostering continuous learning, and improving quality of life.
-                    </p>
-
-                    <h5 class="mt-3">Our Goals</h5>
+                    <h5 class="mt-3">Areas of Expertise</h5>
                     <ul class="ps-3">
-                        <li>Patient-centered personalized care</li>
-                        <li>Innovative and advanced surgical treatments</li>
-                        <li>Education & training for specialists</li>
-                        <li>Public awareness of colorectal health</li>
+                        <li>Colorectal Surgery</li>
+                        <li>Laparoscopic Surgery</li>
+                        <li>Laser Surgery</li>
+                        <li>Colorectal Cancer Surgery</li>
+                        <li>Advanced Pelvic Floor Procedures</li>
                     </ul>
+
+                    <p class="mt-3">
+                        Known for his patient-first philosophy, Dr. Asif ensures that every
+                        patient clearly understands their diagnosis, treatment options,
+                        and recovery plan. He believes in multidisciplinary collaboration
+                        to provide the highest standard of surgical care.
+                    </p>
 
                     <button class="btn btn-outline-light rounded-pill mt-3" onclick="toggleAbout(false)">
                         Show Less
@@ -62,9 +65,10 @@
             {{-- RIGHT : LOGIN --}}
             <div class="login-panel">
                 <div class="text-center mb-4">
-                    <h4 class="fw-bold">Secure Login</h4>
-                    <p class="text-muted">Hospital Management System</p>
+                    <h4 class="fw-bold">Doctor Portal Login</h4>
+                    <p class="text-muted">Authorized access for administrative and clinical management</p>
                 </div>
+
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -75,10 +79,15 @@
                     </div>
 
                     <div class="mb-4">
-                        <label for="password" class="form-label fw-semibold"></label>
-                        <input id="password" type="password"
-                            class="form-control form-control-lg rounded-3 shadow-sm @error('password') is-invalid @enderror"
-                            name="password" placeholder="Enter your password" required>
+                        <div class="position-relative">
+                            <input id="password" type="password" class="form-control form-control-lg rounded-3 shadow-sm"
+                                name="password" placeholder="Enter your password" required>
+
+                            <span class="toggle-password" onclick="togglePassword()">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+
 
                         {{-- Show password errors only if maintenance is OFF --}}
                         @error('password')
@@ -190,12 +199,20 @@
     {{-- STYLES --}}
     <style>
         body {
-            background: url('{{ asset('uploads/images/welcome_page/cover.png') }}') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                url('{{ asset('uploads/images/welcome_page/cover.png') }}') center/cover no-repeat;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
         }
     </style>
     <link rel="stylesheet" href="{{ asset('css/backend/login.css') }}">
     {{-- SLIDER JS --}}
     <script>
+        function togglePassword() {
+            const password = document.getElementById("password");
+            password.type = password.type === "password" ? "text" : "password";
+        }
+
         function toggleAbout(showFull) {
             const shortAbout = document.getElementById('aboutShort');
             const fullAbout = document.getElementById('aboutFull');
