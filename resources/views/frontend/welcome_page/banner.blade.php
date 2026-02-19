@@ -60,31 +60,16 @@
         @endforeach
     </div>
 </section>
+
 <script>
     let currentIndex = 0;
 
     const slides = document.querySelectorAll('#slider .slide');
-    const dots = document.querySelectorAll('#slider .dot');
-    const link = document.getElementById('doctorLink');
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
             slide.classList.toggle('active', i === index);
         });
-
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
-        });
-
-        const route = slides[index].dataset.route;
-
-        if (route) {
-            link.href = route;
-            link.style.pointerEvents = 'auto';
-        } else {
-            link.href = 'javascript:void(0)';
-            link.style.pointerEvents = 'none';
-        }
 
         currentIndex = index;
     }
@@ -101,6 +86,8 @@
         showSlide(index);
     }
 
-    setInterval(nextSlide, 15000);
-    showSlide(0);
+    if (slides.length > 0) {
+        setInterval(nextSlide, 15000);
+        showSlide(0);
+    }
 </script>
