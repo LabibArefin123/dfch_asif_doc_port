@@ -1,14 +1,15 @@
 /* ===============================
-   PORTFOLIO NAVBAR
+   PORTFOLIO NAVBAR (Bootstrap 5 Compatible)
 ================================ */
 
 .portfolio-navbar {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     padding: 15px 0;
     transition: all 0.3s ease;
     top: 40px; /* below topbar */
+    z-index: 1030;
 }
 
 /* Menu Styling */
@@ -19,11 +20,6 @@
     padding: 8px 14px;
     position: relative;
     transition: all 0.3s ease;
-}
-
-/* Hover Effect */
-.portfolio-menu .nav-link:hover {
-    color: #000;
 }
 
 /* Underline animation */
@@ -44,9 +40,37 @@
     width: 60%;
 }
 
-/* Active link */
+/* Hover & Active */
+.portfolio-menu .nav-link:hover,
 .portfolio-menu .nav-link.active {
-    color: #000;
+    color: #111;
+}
+
+/* Dropdown */
+.portfolio-menu .dropdown-menu {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 0.5rem 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-menu .dropdown-item {
+    color: #222;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-menu .dropdown-item:hover,
+.portfolio-menu .dropdown-item:focus {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+/* Dropdown arrow for Bootstrap 5 */
+.portfolio-menu .dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: 0.2em;
 }
 
 /* CTA Button */
@@ -86,7 +110,17 @@
         padding-top: 15px;
     }
 
-    .portfolio-menu .nav-link {
-        padding: 10px;
+    .portfolio-menu .nav-link,
+    .portfolio-menu .dropdown-item {
+        padding: 10px 15px;
+    }
+
+    .portfolio-menu .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border: none;
     }
 }

@@ -22,17 +22,22 @@
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('css/frontend/frontend.css') }}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
+        <!-- Scroll Progress Bar -->
+        <div id="scrollProgress"
+            style="position: fixed; top: 0; left: 0; width: 0%; height: 4px; background-color: #ff6b6b; z-index: 9999; transition: width 0.25s ease;">
+        </div>
+
         <main class="">
             @yield('content')
         </main>
@@ -193,6 +198,24 @@
         });
     </script>
     {{-- end of land phone js  --}}
+    
+    {{-- Start of Scroll Progress Bar --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.getElementById('scrollProgress');
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY; // Current scroll position
+                const docHeight = document.documentElement.scrollHeight - window
+                .innerHeight; // Total scrollable height
+                const scrollPercent = (scrollTop / docHeight) * 100; // Percentage scrolled
+
+                progressBar.style.width = scrollPercent + "%";
+            });
+        });
+    </script>
+    {{-- End of Scroll Progress Bar --}}
+
 
 </body>
 

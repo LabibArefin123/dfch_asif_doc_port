@@ -24,12 +24,26 @@
                         About
                     </a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="conditionsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Conditions
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="conditionsDropdown">
+                        <li><a class="dropdown-item" href="#">Piles</a></li>
+                        <li><a class="dropdown-item" href="#">Fissure</a></li>
+                        <li><a class="dropdown-item" href="#">Fistula</a></li>
+                        <li><a class="dropdown-item" href="#">IBS</a></li>
+                        <li><a class="dropdown-item" href="#">Colorectal Cancer</a></li>
+                    </ul>
 
+                </li>
                 <li class="nav-item"><a href="#specializations" class="nav-link">Specializations</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
                 <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li class="nav-item"> <a href="{{ route('book') }}" class="nav-link {{ request()->routeIs('book') ? 'active' : '' }}">
+                <li class="nav-item"> <a href="{{ route('book') }}"
+                        class="nav-link {{ request()->routeIs('book') ? 'active' : '' }}">
                         Book
                     </a></li>
                 <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
