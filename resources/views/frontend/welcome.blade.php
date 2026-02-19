@@ -8,7 +8,6 @@
     @include('frontend.welcome_page.banner')
     @include('frontend.welcome_page.publications')
     @include('frontend.welcome_page.membership')
-    @include('frontend.welcome_page.services')
+    @include('frontend.welcome_page.achievement')
     @include('frontend.welcome_page.footer')
-
 @endsection
