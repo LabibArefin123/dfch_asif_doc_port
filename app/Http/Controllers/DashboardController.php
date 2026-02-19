@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Patient;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
@@ -21,42 +20,8 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
 
-        $today = Carbon::today();
-
-        $totalPatients = Patient::count();
-
-        $todayPatients = Patient::whereDate('date_of_patient_added', $today)->count();
-
-        $weeklyPatients = Patient::whereBetween(
-            'date_of_patient_added',
-            [$today->copy()->startOfWeek(), $today->copy()->endOfWeek()]
-        )->count();
-
-        $monthlyPatients = Patient::whereMonth('date_of_patient_added', $today->month)
-            ->whereYear('date_of_patient_added', $today->year)
-            ->count();
-
-        //Recommended Patients Count
-        $totalRecommendedPatients = Patient::where('is_recommend', 1)->count();
-
-        $todayRecommendedPatients = Patient::where('is_recommend', 1)
-            ->whereDate('date_of_patient_added', $today)
-            ->count();
-
-        $monthlyRecommendedPatients = Patient::where('is_recommend', 1)
-            ->whereMonth('date_of_patient_added', $today->month)
-            ->whereYear('date_of_patient_added', $today->year)
-            ->count();
-
-        return view('backend.dashboard', compact(
-            'totalPatients',
-            'todayPatients',
-            'weeklyPatients',
-            'monthlyPatients',
-            'totalRecommendedPatients',
-            'todayRecommendedPatients',
-            'monthlyRecommendedPatients'
-        ));
+       
+        return view('backend.dashboard');
     }
 
 

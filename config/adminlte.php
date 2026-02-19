@@ -421,8 +421,8 @@ return [
 
                 [
                     'text'  => 'Patient List',
-                    'route' => 'patients.index',
-                    'can'   => 'patients.index',
+                    // 'route' => 'patients.index',
+                    // 'can'   => 'patients.index',
                     'icon'  => 'fas fa-list',
                 ],
 
