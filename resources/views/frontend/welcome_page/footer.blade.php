@@ -35,9 +35,9 @@
                 <h6 class="fw-bold text-warning mb-3">Treatments & Conditions</h6>
                 <ul class="list-unstyled small">
                     <li><a href="#ibs" class="text-white text-decoration-none">IBS</a></li>
-                    <li><a href="#fistula" class="text-white text-decoration-none">Fistula</a></li>
+                    <li><a href="{{ route('fistula') }}" class="text-white text-decoration-none {{ request()->routeIs('fistula') ? 'active' : '' }}">Fistula</a></li>
                     <li><a href="#cancer" class="text-white text-decoration-none">Colorectal Cancer</a></li>
-                    <li><a href="#piles" class="text-white text-decoration-none">What is Piles?</a></li>
+                    <li><a href="{{ route('piles') }}" class="text-white text-decoration-none {{ request()->routeIs('piles') ? 'active' : '' }}">What is Piles?</a></li>
                 </ul>
             </div>
 

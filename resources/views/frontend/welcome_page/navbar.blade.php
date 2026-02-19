@@ -26,13 +26,21 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="conditionsDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                        data-toggle="dropdown" aria-expanded="false">
                         Conditions
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="conditionsDropdown">
-                        <li><a class="dropdown-item" href="#">Piles</a></li>
+                        <li>
+                            <a href="{{ route('piles') }}"
+                                class="nav-link {{ request()->routeIs('piles') ? 'active' : '' }}">
+                                Piles
+                            </a>
+                        </li>
                         <li><a class="dropdown-item" href="#">Fissure</a></li>
-                        <li><a class="dropdown-item" href="#">Fistula</a></li>
+                        <li> <a href="{{ route('fistula') }}"
+                                class="nav-link {{ request()->routeIs('fistula') ? 'active' : '' }}">
+                                Fistula
+                            </a></li>
                         <li><a class="dropdown-item" href="#">IBS</a></li>
                         <li><a class="dropdown-item" href="#">Colorectal Cancer</a></li>
                     </ul>

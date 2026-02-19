@@ -23,6 +23,8 @@ use Illuminate\Http\Request;
 Route::get('/', [WelcomePageController::class, 'index'])->name('welcome');
 Route::get('/about', [WelcomePageController::class, 'about'])->name('about');
 Route::get('/book', [WelcomePageController::class, 'book'])->name('book');
+Route::get('/piles', [WelcomePageController::class, 'piles'])->name('piles');
+Route::get('/fistula', [WelcomePageController::class, 'fistula'])->name('fistula');
 Route::post('/system-problem/store', [WelcomePageController::class, 'system_problem_store'])->name('system_problem.store');
 
 Route::get('/user_profile', function () {

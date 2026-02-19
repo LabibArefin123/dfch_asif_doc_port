@@ -24,6 +24,16 @@ class WelcomePageController extends Controller
         return view('frontend.book');
     }
 
+    public function piles()
+    {
+        return view('frontend.conditions.piles');
+    }
+
+    public function fistula()
+    {
+        return view('frontend.conditions.fistula');
+    }
+
 
     public function system_problem_store(Request $request)
     {
