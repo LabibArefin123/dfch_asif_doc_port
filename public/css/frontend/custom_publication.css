@@ -34,7 +34,6 @@
 }
 
 /* Green curved animated line */
-/* Green curved animated line */
 .section-title::after {
     content: "";
     position: absolute;
@@ -54,7 +53,7 @@
 /* Animation */
 
 /* Thin blue accent line */
-.section-title::before {
+/* .section-title::before {
     content: "";
     position: absolute;
     left: 17.5%;
@@ -63,7 +62,7 @@
     height: 3px;
     background: #2f80ed;
     border-radius: 50px;
-}
+} */
 
 /* Animation */
 @keyframes drawLine {

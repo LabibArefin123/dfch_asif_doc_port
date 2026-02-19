@@ -19,6 +19,11 @@ class WelcomePageController extends Controller
         return view('frontend.about');
     }
 
+    public function book()
+    {
+        return view('frontend.book');
+    }
+
 
     public function system_problem_store(Request $request)
     {

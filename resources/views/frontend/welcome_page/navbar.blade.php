@@ -29,7 +29,9 @@
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
                 <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li class="nav-item"> <a href="{{ route('book') }}" class="nav-link {{ request()->routeIs('book') ? 'active' : '' }}">
+                        Book
+                    </a></li>
                 <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
 

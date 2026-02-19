@@ -17,9 +17,8 @@
     <section class="doctor-profile">
         <div class="doctor-card">
             <div class="row align-items-start">
-
                 <!-- Image + Book -->
-                <div class="col-md-5 mb-4 mb-md-0">
+                <div class="col-lg-4 col-md-5 mb-4 mb-md-0">
                     <div class="doctor-image">
                         <img src="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}" class="magnify-img"
                             alt="Dr. Asif Almas Haque">
@@ -29,7 +28,7 @@
                 </div>
 
                 <!-- Content -->
-                <div class="col-md-7">
+                <div class="col-lg-8 col-md-7 doctor-content">
                     <h2 class="doctor-name">Dr. Asif Almas Haque</h2>
 
                     <p class="doctor-degree">
