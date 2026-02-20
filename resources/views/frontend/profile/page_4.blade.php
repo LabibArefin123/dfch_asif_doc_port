@@ -17,32 +17,110 @@
 
     <section class="doctor-profile">
         <div class="doctor-card">
-            <div class="row align-items-start">
-                <div class="col-lg-8 col-md-7 doctor-content">
-                    <h2 class="doctor-name">Membership</h2>
+            <h2 class="doctor-name">Membership</h2>
 
-                    <!-- National Memberships -->
-                    <h5 class="section-title mt-4">National</h5>
-                    <ul class="member-list mt-2">
-                        <li>Member of the Society of Surgeons of Bangladesh</li>
-                        <li>Member of Society of Laparoscopic Surgeons of Bangladesh</li>
-                        <li>Member of Bangladesh Society of Colon & Rectal Surgeons</li>
-                    </ul>
+            <!-- National -->
+            <h5 class="section-title mt-4">National</h5>
+            <ul class="member-list">
 
-                    <!-- International Memberships -->
-                    <h5 class="section-title mt-4">International</h5>
-                    <ul class="member-list mt-2">
-                        <li>Member of Royal College of Surgeons of Edinburgh (MRCS)</li>
-                        <li>Fellow of Royal College of Physicians & Surgeons of Glasgow (FRCS)</li>
-                        <li>Fellow of American Society of Colon & Rectal Surgeons (FASCRS)</li>
-                        <li>Fellow of American College of Surgeons (FACS)</li>
-                        <li>Member of The Association of Coloproctology of Great Britain & Ireland</li>
-                        <li>Member of European Society of Coloproctology</li>
-                        <li>Life Member of Endoscopic & Laparoscopic Surgeons of Asia</li>
-                    </ul>
+                <li>
+                    <div class="member-item">
+                        <a href="https://www.sosb-bd.org/" target="_blank">
+                            Society of Surgeons of Bangladesh
+                        </a>
+                         <img src="{{ asset('uploads/images/welcome_page/membership/image_1.png') }}" alt="">
+                    </div>
+                </li>
 
-                </div>
-            </div>
+                <li>
+                    <div class="member-item">
+                        <a href="https://selsb-bd.org/" target="_blank">
+                            Society of Endo Laparoscopic Surgeons of Bangladesh
+                        </a>
+                         <img src="{{ asset('uploads/images/welcome_page/membership/image_2.jpg') }}" alt="">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="member-item">
+                        <a href="https://www.facebook.com/bscrsbd/" target="_blank">
+                            Bangladesh Society of Colon & Rectal Surgeons
+                        </a>
+                        <img src="{{ asset('uploads/images/welcome_page/membership/image_9.JPG') }}" alt="">
+                    </div>
+                </li>
+
+            </ul>
+
+            <!-- International -->
+            <h5 class="section-title mt-5">International</h5>
+            <ul class="member-list">
+
+                <li>
+                    <div class="member-item">
+                        <a href="https://www.rcsed.ac.uk/" target="_blank">
+                            Royal College of Surgeons of Edinburgh (MRCS)
+                        </a>
+                        <img src="{{ asset('uploads/images/welcome_page/membership/image_3.png') }}" alt="">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="member-item">
+                        <a href="https://rcpsg.ac.uk/" target="_blank">
+                            Royal College of Physicians & Surgeons of Glasgow (FRCS)
+                        </a>
+                        <img src="{{ asset('uploads/images/welcome_page/membership/image_5.JPG') }}" alt="">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="member-item">
+                        <a href="https://fascrs.org/" target="_blank">
+                            American Society of Colon & Rectal Surgeons (FASCRS)
+                        </a>
+                        <img src="{{ asset('uploads/images/welcome_page/membership/image_6.png') }}" alt="">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="member-item">
+                        <a href="https://www.facs.org/" target="_blank">
+                            American College of Surgeons (FACS)
+                        </a>
+                        <img src="{{ asset('uploads/images/welcome_page/membership/image_7.JPG') }}" alt="">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="member-item">
+                        <a href="https://www.acpgbi.org.uk/" target="_blank">
+                            Association of Coloproctology of Great Britain & Ireland
+                        </a>
+                        <img src="{{ asset('uploads/images/welcome_page/membership/image_4.png') }}" alt="">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="member-item">
+                        <a href="https://www.escp.eu.com/" target="_blank">
+                            European Society of Coloproctology
+                        </a>
+                        <img src="{{ asset('uploads/images/welcome_page/membership/image_10.jpg') }}" alt="">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="member-item">
+                        <a href="https://elsasociety.org/" target="_blank">
+                            Endoscopic & Laparoscopic Surgeons of Asia (Life Member)
+                        </a>
+                        <img src="{{ asset('uploads/images/welcome_page/membership/image_8.jpg') }}" alt="">
+                    </div>
+                </li>
+
+            </ul>
+
         </div>
     </section>
 

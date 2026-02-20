@@ -1,5 +1,7 @@
+/* ============================
+   Global Reset
+============================ */
 
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +9,15 @@
 }
 
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7fb;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f5f9fc;
     color: #333;
     line-height: 1.7;
 }
 
-/* =========================================
+/* ============================
    Banner Section
-========================================= */
+============================ */
 
 .doctor-banner {
     height: 260px;
@@ -31,27 +33,18 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(0, 64, 128, 0.85),
-        rgba(0, 128, 128, 0.7)
-    );
+    background: linear-gradient(90deg, #003366cc, #008080cc);
 }
 
 .breadcrumb-custom {
     position: relative;
     z-index: 2;
     background: rgba(255, 255, 255, 0.15);
-    padding: 12px 25px;
+    padding: 12px 28px;
     border-radius: 30px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px);
     color: #fff;
     font-size: 15px;
-}
-
-.breadcrumb-custom span {
-    margin: 0 8px;
-    color: #fff;
 }
 
 .doc-link {
@@ -64,55 +57,59 @@ body {
     color: #ffd700;
 }
 
-/* =========================================
+/* ============================
    Profile Section
-========================================= */
+============================ */
 
 .doctor-profile {
-    padding: 80px 0;
+    padding: 90px 0;
 }
 
 .doctor-card {
     background: #ffffff;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: -100px auto 0;
-    padding: 50px;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    padding: 60px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
     position: relative;
     z-index: 3;
 }
-/* =========================================
-   Content Styling
-========================================= */
+
+/* ============================
+   Headings
+============================ */
 
 .doctor-name {
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 700;
-    color: #004080;
-    margin-bottom: 10px;
+    color: #003366;
+    margin-bottom: 20px;
 }
 
-.doctor-degree {
-    font-size: 18px;
-    color: #008080;
-    font-weight: 500;
-    margin-bottom: 25px;
-}
-
-/* Section Titles */
 .section-title {
     font-size: 20px;
     font-weight: 600;
-    color: #004080;
-    border-left: 4px solid #008080;
-    padding-left: 12px;
-    margin-bottom: 15px;
+    color: #004d66;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 15px;
 }
 
-/* =========================================
-   Membership – Professional Styling
-========================================= */
+.section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 5px;
+    height: 20px;
+    background: #00a3a3;
+    border-radius: 5px;
+}
+
+/* =============================
+   Membership List Improved
+============================= */
 
 .member-list {
     list-style: none;
@@ -121,76 +118,95 @@ body {
 }
 
 .member-list li {
-    padding: 18px 25px;
-    margin-bottom: 18px;
-    border-left: 5px solid #008080;
     background: #ffffff;
+    padding: 16px 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #008080;
     border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-    line-height: 1.6;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
 }
 
 .member-list li:hover {
-    background: #f0faff;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    background: #f2fbfb;
 }
 
-.member-list li strong {
-    display: block;
-    color: #004080;
-    font-weight: 700;
-    font-size: 15.5px;
-    margin-bottom: 5px;
+/* FLEX LAYOUT */
+.member-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.member-list li em {
-    display: block;
-    color: #555555;
-    font-style: italic;
-    font-size: 14px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.journal-link {
-    color: #008080;
-    text-decoration: underline;
-    word-break: break-word;
-    font-size: 14px;
-    display: inline-block;
-    margin-top: 5px;
-}
-
-.journal-link:hover {
-    color: #004080;
+/* TEXT */
+.member-item a {
     text-decoration: none;
+    font-weight: 600;
+    color: #004080;
+    font-size: 15px;
+    flex: 1;
+    transition: 0.3s ease;
 }
 
-/* Responsive Design */
+.member-item a:hover {
+    color: #008080;
+}
+
+/* IMAGE FIX */
+.member-item img {
+    height: 80px; /* small fixed height */
+    width: auto;
+    max-width: 200px; /* prevents large width */
+    object-fit: contain;
+    border-radius: 6px;
+    background: #fff;
+    padding: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .member-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .member-item img {
+        margin-top: 10px;
+        height: 50px;
+    }
+}
+/* ============================
+   Responsive
+============================ */
+
 @media (max-width: 992px) {
-    .member-list li {
-        padding: 16px 18px;
+    .doctor-card {
+        padding: 40px;
     }
-    .member-list li strong {
-        font-size: 15px;
+}
+
+@media (max-width: 768px) {
+    .doctor-card {
+        padding: 30px;
     }
-    .member-list li em,
-    .journal-link {
-        font-size: 14px;
+
+    .doctor-name {
+        font-size: 26px;
+    }
+
+    .section-title {
+        font-size: 18px;
     }
 }
 
 @media (max-width: 576px) {
     .member-list li {
-        padding: 14px 15px;
+        padding: 15px;
     }
-    .member-list li strong {
+
+    .member-list a {
         font-size: 14px;
-    }
-    .member-list li em,
-    .journal-link {
-        font-size: 13px;
     }
 }
