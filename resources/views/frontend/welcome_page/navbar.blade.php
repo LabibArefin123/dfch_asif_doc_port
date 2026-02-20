@@ -25,7 +25,7 @@
                     </a>
                 </li>
 
-                 <li class="nav-item dropdown" id="profile_dropdown">
+                <li class="nav-item dropdown" id="profile_dropdown">
                     <a href="#" class="nav-link custom-link dropdown-toggle" role="button" aria-expanded="false">
                         Professional Profile
                     </a>
@@ -55,7 +55,7 @@
                         <li>
                             <a href="{{ route('page_4') }}"
                                 class="dropdown-item {{ request()->routeIs('page_4') ? 'active' : '' }}">
-                               Membership
+                                Membership
                             </a>
                         </li>
                     </ul>
@@ -115,7 +115,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('contact') }}" class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">
+                    <a href="{{ route('contact') }}"
+                        class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">
                         Contact
                     </a>
                 </li>
@@ -125,7 +126,7 @@
 
         <!-- CTA -->
         <div class="d-none d-lg-block ml-auto">
-            <a href="#appointment" class="btn portfolio-btn">
+            <a href="javascript:void(0)" class="btn portfolio-btn" id="openAppointment">
                 Book Appointment
             </a>
         </div>

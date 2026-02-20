@@ -24,24 +24,31 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{{ asset('css/frontend/frontend.css') }}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/frontend/frontend.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/custom_appointment.css') }}">
 </head>
 
 <body>
     <div id="app">
+
         <!-- Scroll Progress Bar -->
         <div id="scrollProgress"
             style="position: fixed; top: 0; left: 0; width: 0%; height: 4px; background-color: #ff6b6b; z-index: 9999; transition: width 0.25s ease;">
         </div>
 
-        <main class="">
+        <main>
             @yield('content')
         </main>
+
     </div>
+
+    {{-- Appointment Modal (Place OUTSIDE #app) --}}
+    @include('frontend.welcome_page.modal.appointment')
+
     <!-- Bootstrap JS + dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
@@ -215,8 +222,7 @@
         });
     </script>
     {{-- End of Scroll Progress Bar --}}
-
-
+    <script src="{{ asset('js/appointment-modal.js') }}"></script>
 </body>
 
 </html>

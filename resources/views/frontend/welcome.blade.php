@@ -1,7 +1,9 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Dr. Asif Almas Haque')
+
 <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+
 
 @section('content')
     @include('frontend.welcome_page.header')
