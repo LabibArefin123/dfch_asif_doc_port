@@ -24,34 +24,48 @@
                         About
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="conditionsDropdown" role="button"
-                        data-toggle="dropdown" aria-expanded="false">
+
+                <li class="nav-item dropdown" id="conditions_dropdown">
+                    <a href="#" class="nav-link custom-link dropdown-toggle" role="button" aria-expanded="false">
                         Conditions
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="conditionsDropdown">
+
+                    <ul class="dropdown-menu">
                         <li>
                             <a href="{{ route('piles') }}"
-                                class="nav-link {{ request()->routeIs('piles') ? 'active' : '' }}">
+                                class="dropdown-item {{ request()->routeIs('piles') ? 'active' : '' }}">
                                 Piles
                             </a>
                         </li>
-                        <li><a class="dropdown-item" href="#">Fissure</a></li>
+
+                        <li>
+                            <a href="{{ route('fissure') }}"
+                                class="dropdown-item {{ request()->routeIs('fissure') ? 'active' : '' }}">
+                                Fissure
+                            </a>
+                        </li>
+
                         <li>
                             <a href="{{ route('fistula') }}"
-                                class="nav-link {{ request()->routeIs('fistula') ? 'active' : '' }}">
+                                class="dropdown-item {{ request()->routeIs('fistula') ? 'active' : '' }}">
                                 Fistula
                             </a>
                         </li>
-                        <li><a class="dropdown-item" href="#">IBS</a></li>
+
+                        <li>
+                            <a href="{{ route('ibs') }}"
+                                class="dropdown-item {{ request()->routeIs('ibs') ? 'active' : '' }}">
+                                Irritable Bowel Syndrome (IBS)
+                            </a>
+                        </li>
+
                         <li>
                             <a href="{{ route('colorectal_cancer') }}"
-                                class="nav-link {{ request()->routeIs('colorectal_cancer') ? 'active' : '' }}">
+                                class="dropdown-item {{ request()->routeIs('colorectal_cancer') ? 'active' : '' }}">
                                 Colorectal Cancer
                             </a>
                         </li>
                     </ul>
-
                 </li>
                 <li class="nav-item"><a href="#specializations" class="nav-link">Specializations</a></li>
                 <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
@@ -76,3 +90,37 @@
 
     </div>
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const dropdown = document.getElementById('conditions_dropdown');
+        const toggleLink = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+
+        // Toggle on click
+        toggleLink.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const isOpen = menu.classList.contains('show');
+
+            // Close any other open dropdowns
+            document.querySelectorAll('.dropdown-menu.show').forEach(el => {
+                el.classList.remove('show');
+            });
+
+            // Toggle current dropdown
+            menu.classList.toggle('show', !isOpen);
+            toggleLink.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                menu.classList.remove('show');
+                toggleLink.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+    });
+</script>

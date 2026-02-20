@@ -1,29 +1,35 @@
 /* ===============================
-   PORTFOLIO NAVBAR (Bootstrap 5 Compatible)
+   PORTFOLIO NAVBAR CLEAN VERSION
 ================================ */
+
+/* ================= NAVBAR BASE ================= */
 
 .portfolio-navbar {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     padding: 15px 0;
-    transition: all 0.3s ease;
-    top: 40px; /* below topbar */
+    top: 40px;
     z-index: 1030;
 }
 
-/* Menu Styling */
+/* ================= MENU LINKS ================= */
+
+.portfolio-menu .nav-item {
+    position: relative; /* important for dropdown */
+}
+
 .portfolio-menu .nav-link {
     color: #222;
     font-weight: 500;
     font-size: 15px;
     padding: 8px 14px;
     position: relative;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
-/* Underline animation */
-.portfolio-menu .nav-link::after {
+/* Underline animation (only for main nav links) */
+.portfolio-menu .nav-item:not(.dropdown) .nav-link::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -31,49 +37,84 @@
     width: 0;
     height: 2px;
     background: #111;
-    transition: all 0.3s ease;
     transform: translateX(-50%);
+    transition: 0.3s ease;
 }
 
-.portfolio-menu .nav-link:hover::after,
-.portfolio-menu .nav-link.active::after {
+.portfolio-menu .nav-item:not(.dropdown) .nav-link:hover::after,
+.portfolio-menu .nav-item:not(.dropdown) .nav-link.active::after {
     width: 60%;
 }
 
-/* Hover & Active */
 .portfolio-menu .nav-link:hover,
 .portfolio-menu .nav-link.active {
     color: #111;
 }
 
-/* Dropdown */
+/* ================= DROPDOWN DESKTOP ================= */
+
 .portfolio-menu .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+
     background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    padding: 0.5rem 0;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 8px 0;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+
+    display: block; /* required for animation */
+    z-index: 9999;
 }
 
+/* Show state from JS */
+.portfolio-menu .dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown items */
 .portfolio-menu .dropdown-item {
+    padding: 8px 18px;
+    font-size: 14px;
     color: #222;
-    padding: 8px 20px;
-    transition: all 0.3s ease;
+    transition: 0.2s ease;
 }
 
-.portfolio-menu .dropdown-item:hover,
-.portfolio-menu .dropdown-item:focus {
-    background-color: #ff6b6b;
+/* Remove underline inside dropdown */
+.portfolio-menu .dropdown-item::after {
+    display: none !important;
+}
+
+.portfolio-menu .dropdown-item:hover {
+    background: #ff6b6b;
     color: #fff;
 }
 
-/* Dropdown arrow for Bootstrap 5 */
+/* ================= DROPDOWN ARROW ================= */
+
 .portfolio-menu .dropdown-toggle::after {
     margin-left: 6px;
     vertical-align: 0.2em;
+    transition: 0.3s ease;
 }
 
-/* CTA Button */
+/* Rotate arrow when open */
+.portfolio-menu .dropdown-menu.show + .dropdown-toggle,
+.portfolio-menu .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+/* ================= CTA BUTTON ================= */
+
 .portfolio-btn {
     background: #111;
     color: #fff;
@@ -81,7 +122,7 @@
     border-radius: 30px;
     font-size: 14px;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .portfolio-btn:hover {
@@ -89,22 +130,9 @@
     color: #fff;
 }
 
-/* Mobile Toggle */
-.navbar-toggler {
-    border: none;
-}
+/* ================= MOBILE ================= */
 
-.navbar-toggler:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-/* Mobile Style */
 @media (max-width: 991px) {
-    .portfolio-navbar {
-        top: 40px;
-    }
-
     .portfolio-menu {
         text-align: center;
         padding-top: 15px;
@@ -115,12 +143,18 @@
         padding: 10px 15px;
     }
 
+    /* Make dropdown behave like accordion */
     .portfolio-menu .dropdown-menu {
         position: static;
-        float: none;
-        width: 100%;
-        margin: 0;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
         box-shadow: none;
         border: none;
+        display: none;
+    }
+
+    .portfolio-menu .dropdown-menu.show {
+        display: block;
     }
 }

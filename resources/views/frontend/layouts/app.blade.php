@@ -198,7 +198,7 @@
         });
     </script>
     {{-- end of land phone js  --}}
-    
+
     {{-- Start of Scroll Progress Bar --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -207,7 +207,7 @@
             window.addEventListener('scroll', () => {
                 const scrollTop = window.scrollY; // Current scroll position
                 const docHeight = document.documentElement.scrollHeight - window
-                .innerHeight; // Total scrollable height
+                    .innerHeight; // Total scrollable height
                 const scrollPercent = (scrollTop / docHeight) * 100; // Percentage scrolled
 
                 progressBar.style.width = scrollPercent + "%";

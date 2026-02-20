@@ -3,9 +3,9 @@
 <section id="publications" class="publications-section">
     <div class="container">
 
-        <h2 class="section-title">
-            <span>PUBLICATIONS</span>
-        </h2>
+    <h2 class="section-title">
+        <span>PUBLICATIONS</span>
+    </h2>
 
         <div class="publication-list">
 
