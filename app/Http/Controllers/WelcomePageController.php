@@ -74,6 +74,11 @@ class WelcomePageController extends Controller
         return view('frontend.faq');
     }
 
+    public function contact()
+    {
+        return view('frontend.contact');
+    }
+
     public function system_problem_store(Request $request)
     {
         $request->validate([
