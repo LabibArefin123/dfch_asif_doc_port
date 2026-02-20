@@ -25,6 +25,42 @@
                     </a>
                 </li>
 
+                 <li class="nav-item dropdown" id="profile_dropdown">
+                    <a href="#" class="nav-link custom-link dropdown-toggle" role="button" aria-expanded="false">
+                        Profile
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ route('page_1') }}"
+                                class="dropdown-item {{ request()->routeIs('page_1') ? 'active' : '' }}">
+                                Educational Background
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('fissure') }}"
+                                class="dropdown-item {{ request()->routeIs('fissure') ? 'active' : '' }}">
+                                International Conference
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('page_3') }}"
+                                class="dropdown-item {{ request()->routeIs('page_3') ? 'active' : '' }}">
+                                Journal Publication
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('page_4') }}"
+                                class="dropdown-item {{ request()->routeIs('page_4') ? 'active' : '' }}">
+                               Membership
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="nav-item dropdown" id="conditions_dropdown">
                     <a href="#" class="nav-link custom-link dropdown-toggle" role="button" aria-expanded="false">
                         Conditions
@@ -67,8 +103,6 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="#specializations" class="nav-link">Specializations</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
                 <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li class="nav-item">
                     <a href="{{ route('book') }}" class="nav-link {{ request()->routeIs('book') ? 'active' : '' }}">
@@ -95,6 +129,40 @@
     document.addEventListener('DOMContentLoaded', function() {
 
         const dropdown = document.getElementById('conditions_dropdown');
+        const toggleLink = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+
+        // Toggle on click
+        toggleLink.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const isOpen = menu.classList.contains('show');
+
+            // Close any other open dropdowns
+            document.querySelectorAll('.dropdown-menu.show').forEach(el => {
+                el.classList.remove('show');
+            });
+
+            // Toggle current dropdown
+            menu.classList.toggle('show', !isOpen);
+            toggleLink.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                menu.classList.remove('show');
+                toggleLink.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const dropdown = document.getElementById('profile_dropdown');
         const toggleLink = dropdown.querySelector('.dropdown-toggle');
         const menu = dropdown.querySelector('.dropdown-menu');
 

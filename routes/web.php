@@ -6,10 +6,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
-use App\Http\Controllers\PatientController;
-use App\Http\Controllers\ReportController;
-
-
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\SystemUserController;
 use App\Http\Controllers\BanUserController;
@@ -19,9 +15,18 @@ use App\Http\Controllers\SystemProblemController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+//Welcome Section
 Route::get('/', [WelcomePageController::class, 'index'])->name('welcome');
+
+//About Section
 Route::get('/about', [WelcomePageController::class, 'about'])->name('about');
+
+//Profile Section
+Route::get('/educational_background', [WelcomePageController::class, 'profile_page_1'])->name('page_1');
+Route::get('/journal_publication', [WelcomePageController::class, 'profile_page_3'])->name('page_3');
+Route::get('/membership', [WelcomePageController::class, 'profile_page_4'])->name('page_4');
+
+//Condition Section
 Route::get('/book', [WelcomePageController::class, 'book'])->name('book');
 Route::get('/piles', [WelcomePageController::class, 'piles'])->name('piles');
 Route::get('/fistula', [WelcomePageController::class, 'fistula'])->name('fistula');
