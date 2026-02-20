@@ -5,7 +5,7 @@
 
         <!-- BRAND -->
         <a class="navbar-brand d-flex align-items-center" href="{{ route('welcome') }}">
-            <img src="{{ asset('uploads/images/icon2.JPG') }}" alt="Dr Asif Logo" class="brand-logo">
+            <img src="{{ asset('uploads/images/icon.png') }}" alt="Dr Asif Logo" class="brand-logo">
 
             <div class="brand-text">
                 <div class="brand-name">
@@ -17,67 +17,71 @@
             </div>
         </a>
 
-        <!-- MOBILE TOGGLE -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span> </button>
+        <!-- Menu -->
 
-        <!-- MENU -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
             <ul class="navbar-nav portfolio-menu">
-
-                <li class="nav-item">
-                    <a href="{{ route('welcome') }}"
-                        class="nav-link {{ request()->routeIs('welcome') ? 'active' : '' }}">
-                        Home
-                    </a>
+                <li class="nav-item"> <a href="{{ route('welcome') }}"
+                        class="nav-link {{ request()->routeIs('welcome') ? 'active' : '' }}"> Home </a> </li>
+                <li class="nav-item"> <a href="{{ route('about') }}"
+                        class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}"> About </a> </li>
+                <li class="nav-item dropdown" id="profile_dropdown"> <a href="#"
+                        class="nav-link custom-link dropdown-toggle" role="button" aria-expanded="false"> Professional
+                        Profile </a>
+                    <ul class="dropdown-menu">
+                        <li> <a href="{{ route('page_1') }}"
+                                class="dropdown-item {{ request()->routeIs('page_1') ? 'active' : '' }}"> Educational
+                                Background </a> </li>
+                        <li> <a href="{{ route('page_2') }}"
+                                class="dropdown-item {{ request()->routeIs('page_2') ? 'active' : '' }}"> International
+                                Conference </a> </li>
+                        <li> <a href="{{ route('page_3') }}"
+                                class="dropdown-item {{ request()->routeIs('page_3') ? 'active' : '' }}"> Journal
+                                Publication </a> </li>
+                        <li> <a href="{{ route('page_4') }}"
+                                class="dropdown-item {{ request()->routeIs('page_4') ? 'active' : '' }}"> Membership
+                            </a> </li>
+                    </ul>
                 </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">
-                        About
-                    </a>
+                <li class="nav-item dropdown" id="conditions_dropdown"> <a href="#"
+                        class="nav-link custom-link dropdown-toggle" role="button" aria-expanded="false"> Conditions We
+                        Treat </a>
+                    <ul class="dropdown-menu">
+                        <li> <a href="{{ route('piles') }}"
+                                class="dropdown-item {{ request()->routeIs('piles') ? 'active' : '' }}"> Piles </a>
+                        </li>
+                        <li> <a href="{{ route('fissure') }}"
+                                class="dropdown-item {{ request()->routeIs('fissure') ? 'active' : '' }}"> Fissure </a>
+                        </li>
+                        <li> <a href="{{ route('fistula') }}"
+                                class="dropdown-item {{ request()->routeIs('fistula') ? 'active' : '' }}"> Fistula </a>
+                        </li>
+                        <li> <a href="{{ route('ibs') }}"
+                                class="dropdown-item {{ request()->routeIs('ibs') ? 'active' : '' }}"> Irritable Bowel
+                                Syndrome (IBS) </a> </li>
+                        <li> <a href="{{ route('colorectal_cancer') }}"
+                                class="dropdown-item {{ request()->routeIs('colorectal_cancer') ? 'active' : '' }}">
+                                Colorectal Cancer </a> </li>
+                    </ul>
                 </li>
-
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        Professional Profile
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('page_1') }}">Education</a>
-                        <a class="dropdown-item" href="{{ route('page_2') }}">Conferences</a>
-                        <a class="dropdown-item" href="{{ route('page_3') }}">Publications</a>
-                        <a class="dropdown-item" href="{{ route('page_4') }}">Memberships</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        Conditions Treated
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('piles') }}">Piles</a>
-                        <a class="dropdown-item" href="{{ route('fissure') }}">Fissure</a>
-                        <a class="dropdown-item" href="{{ route('fistula') }}">Fistula</a>
-                        <a class="dropdown-item" href="{{ route('colorectal_cancer') }}">Colorectal Cancer</a>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('faq') }}" class="nav-link">FAQ</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('contact') }}" class="nav-link">Contact</a>
-                </li>
-
+                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"> <a href="{{ route('book') }}"
+                        class="nav-link {{ request()->routeIs('book') ? 'active' : '' }}"> Book </a> </li>
+                <li class="nav-item"> <a href="{{ route('faq') }}"
+                        class="nav-link {{ request()->routeIs('faq') ? 'active' : '' }}"> FAQ </a> </li>
+                <li class="nav-item"> <a href="{{ route('contact') }}"
+                        class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"> Contact </a> </li>
             </ul>
-
-            <!-- CTA -->
-            <a href="{{ route('book') }}" class="btn portfolio-btn ml-lg-3">
-                Book Appointment
-            </a>
         </div>
+
+        <!-- CTA -->
+        <a href="{{ route('book') }}" class="btn portfolio-btn ml-lg-3">
+            Book Appointment
+        </a>
+    </div>
 
     </div>
 </nav>
