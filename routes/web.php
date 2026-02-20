@@ -23,6 +23,7 @@ Route::get('/about', [WelcomePageController::class, 'about'])->name('about');
 
 //Profile Section
 Route::get('/educational_background', [WelcomePageController::class, 'profile_page_1'])->name('page_1');
+Route::get('/international_conference', [WelcomePageController::class, 'profile_page_2'])->name('page_2');
 Route::get('/journal_publication', [WelcomePageController::class, 'profile_page_3'])->name('page_3');
 Route::get('/membership', [WelcomePageController::class, 'profile_page_4'])->name('page_4');
 

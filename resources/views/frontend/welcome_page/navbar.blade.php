@@ -39,8 +39,8 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('fissure') }}"
-                                class="dropdown-item {{ request()->routeIs('fissure') ? 'active' : '' }}">
+                            <a href="{{ route('page_2') }}"
+                                class="dropdown-item {{ request()->routeIs('page_2') ? 'active' : '' }}">
                                 International Conference
                             </a>
                         </li>
