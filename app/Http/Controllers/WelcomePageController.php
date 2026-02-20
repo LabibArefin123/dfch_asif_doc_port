@@ -69,6 +69,11 @@ class WelcomePageController extends Controller
         return view('frontend.conditions.ibs');
     }
 
+    public function faq()
+    {
+        return view('frontend.faq');
+    }
+
     public function system_problem_store(Request $request)
     {
         $request->validate([

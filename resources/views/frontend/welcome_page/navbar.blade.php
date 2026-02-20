@@ -27,7 +27,7 @@
 
                  <li class="nav-item dropdown" id="profile_dropdown">
                     <a href="#" class="nav-link custom-link dropdown-toggle" role="button" aria-expanded="false">
-                        Profile
+                        Professional Profile
                     </a>
 
                     <ul class="dropdown-menu">
@@ -63,7 +63,7 @@
 
                 <li class="nav-item dropdown" id="conditions_dropdown">
                     <a href="#" class="nav-link custom-link dropdown-toggle" role="button" aria-expanded="false">
-                        Conditions
+                        Conditions We Treat
                     </a>
 
                     <ul class="dropdown-menu">
@@ -109,7 +109,11 @@
                         Book
                     </a>
                 </li>
-                <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+                <li class="nav-item">
+                    <a href="{{ route('faq') }}" class="nav-link {{ request()->routeIs('faq') ? 'active' : '' }}">
+                        FAQ
+                    </a>
+                </li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
 
             </ul>

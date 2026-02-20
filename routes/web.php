@@ -21,6 +21,9 @@ Route::get('/', [WelcomePageController::class, 'index'])->name('welcome');
 //About Section
 Route::get('/about', [WelcomePageController::class, 'about'])->name('about');
 
+//FAQ Section
+Route::get('/faq', [WelcomePageController::class, 'faq'])->name('faq');
+
 //Profile Section
 Route::get('/educational_background', [WelcomePageController::class, 'profile_page_1'])->name('page_1');
 Route::get('/international_conference', [WelcomePageController::class, 'profile_page_2'])->name('page_2');
