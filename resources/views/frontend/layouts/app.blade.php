@@ -45,8 +45,7 @@
         </main>
 
     </div>
-
-    {{-- Appointment Modal (Place OUTSIDE #app) --}}
+    
     @include('frontend.welcome_page.modal.appointment')
 
     <!-- Bootstrap JS + dependencies -->
