@@ -7,14 +7,21 @@
         <div class="top-info">
             <span>
                 <i class="fas fa-map-marker-alt"></i>
-                Dhanmondi, Dhaka-1209
+                86 (New), 726/A (Old), Satmasjid Road, Dhanmondi, Dhaka-1209
             </span>
 
             <span class="divider">|</span>
 
             <a href="tel:01755697173" class="top-link">
                 <i class="fas fa-phone-alt"></i>
-                01755-697173
+                01755697173
+            </a>
+
+            <span class="divider">|</span>
+
+            <a href="tel:01755697176" class="top-link">
+                <i class="fas fa-phone-alt"></i>
+                01755697176
             </a>
 
             <span class="divider">|</span>
