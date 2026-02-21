@@ -101,31 +101,4 @@
         </div>
             @include('frontend.welcome_page.footer')
     </section>
-
-    <style>
-        .gallery-item img {
-            transition: transform 0.3s;
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .col-lg-4 {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-        }
-
-        @media (max-width: 576px) {
-
-            .col-lg-4,
-            .col-md-6 {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-        }
-    </style>
 @endsection
