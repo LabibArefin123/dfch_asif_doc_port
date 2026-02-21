@@ -111,7 +111,6 @@
                             <img id="imagePreview" src="https://via.placeholder.com/300x250?text=Preview" class="img-fluid">
                         </div>
                     </div>
-
                 </div>
 
                 <div class="mt-4 text-end">

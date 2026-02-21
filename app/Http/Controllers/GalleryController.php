@@ -93,45 +93,55 @@ class GalleryController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'image' => 'nullable|file|max:5120',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
             'icon'  => 'nullable|string',
         ]);
 
-        $filePath = $gallery->image;
-        $destination = 'uploads/images/gallery/';
+        $destination = public_path('uploads/images/gallery/');
 
-        if (!file_exists(public_path($destination))) {
-            mkdir(public_path($destination), 0777, true);
+        if (!file_exists($destination)) {
+            mkdir($destination, 0755, true);
         }
 
-        $filename = now()->format('d_m_Y_His') . '_gallery';
+        $filePath = $gallery->image;
+        $filename = now()->format('d_m_Y_His') . '_' . uniqid() . '_gallery';
 
-        // ✅ Priority: Edited image from Toast (icon)
+        // ✅ BASE64 IMAGE (Highest Priority)
         if ($request->icon && preg_match('/^data:image\/(\w+);base64,/', $request->icon, $type)) {
-            if ($gallery->image && file_exists(public_path($gallery->image))) {
-                unlink(public_path($gallery->image));
+
+            $allowedTypes = ['jpg', 'jpeg', 'png', 'webp'];
+            $ext = strtolower($type[1]);
+
+            if (!in_array($ext, $allowedTypes)) {
+                return back()->withErrors(['icon' => 'Invalid image type']);
+            }
+
+            // delete old image
+            if ($gallery->image && file_exists($destination . $gallery->image)) {
+                unlink($destination . $gallery->image);
             }
 
             $image = substr($request->icon, strpos($request->icon, ',') + 1);
             $image = base64_decode($image);
-            $ext = strtolower($type[1]);
 
             $fullName = $filename . '.' . $ext;
-            file_put_contents(public_path($destination . $fullName), $image);
+            file_put_contents($destination . $fullName, $image);
 
-            $filePath =  $fullName;
+            $filePath = $fullName;
         }
-        // ✅ Fallback: Normal file upload
+
+        // ✅ NORMAL FILE UPLOAD
         elseif ($request->hasFile('image')) {
-            if ($gallery->image && file_exists(public_path($gallery->image))) {
-                unlink(public_path($gallery->image));
+
+            if ($gallery->image && file_exists($destination . $gallery->image)) {
+                unlink($destination . $gallery->image);
             }
 
             $file = $request->file('image');
             $fullName = $filename . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path($destination), $fullName);
+            $file->move($destination, $fullName);
 
-            $filePath =  $fullName;
+            $filePath = $fullName;
         }
 
         $gallery->update([
@@ -139,7 +149,9 @@ class GalleryController extends Controller
             'image' => $filePath,
         ]);
 
-        return redirect()->route('galleries.index')->with('success', 'Gallery updated successfully.');
+        return redirect()
+            ->route('galleries.index')
+            ->with('success', 'Gallery updated successfully.');
     }
 
     public function destroy(Gallery $gallery)
