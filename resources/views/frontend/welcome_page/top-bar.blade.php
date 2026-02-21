@@ -29,7 +29,7 @@
 
             <a href="#" class="top-link" id="openEmailModal">
                 <i class="fas fa-envelope"></i>
-                asifh7000@gmail.com
+                info@fazlulhaquehospital.com
             </a>
         </div>
 

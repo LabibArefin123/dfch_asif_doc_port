@@ -2,14 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const phoneLinks = document.querySelectorAll(".open-phone-modal");
     const phoneModalElement = document.getElementById("phoneModal");
 
-    if (phoneModalElement) {
-        const phoneModal = new bootstrap.Modal(phoneModalElement);
+    if (!phoneModalElement) return;
 
-        phoneLinks.forEach((link) => {
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-                phoneModal.show();
-            });
+    const phoneModal = new bootstrap.Modal(phoneModalElement);
+
+    // Open modal for all trigger links
+    phoneLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            phoneModal.show();
         });
-    }
+    });
 });
