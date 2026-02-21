@@ -23,7 +23,7 @@
                         <img src="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}" class="magnify-img"
                             alt="Dr. Asif Almas Haque">
 
-                        <a href="#" class="book-btn">Appoint Now</a>
+                        <a href="{{ route('contact') }}" class="book-btn">Appoint Now</a>
                     </div>
                 </div>
 
