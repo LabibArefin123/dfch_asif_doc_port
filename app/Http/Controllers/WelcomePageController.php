@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Mail\ContactConfirmationMail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use App\Models\SystemProblem;
 use App\Models\Gallery;
@@ -133,6 +137,7 @@ class WelcomePageController extends Controller
         return back()->with('success', '✅ Your problem has been submitted successfully.');
     }
 
+
     public function contactStore(Request $request)
     {
         $ip = $request->ip();
@@ -146,12 +151,13 @@ class WelcomePageController extends Controller
         // Lifetime count
         $totalCount = $lastRequest ? $lastRequest->total_count + 1 : 1;
 
-        // Today's count (auto reset)
+        // Today's count
         $todayCount = ContactRequest::where('ip_address', $ip)
             ->whereDate('created_at', $today)
             ->count() + 1;
 
-        ContactRequest::create([
+        // Store contact request
+        $contact = ContactRequest::create([
             'name'        => $request->name,
             'phone'       => $request->phone,
             'email'       => $request->email,
@@ -161,6 +167,17 @@ class WelcomePageController extends Controller
             'ip_address'  => $ip,
             'total_count' => $totalCount,
         ]);
+
+        // ✅ Send confirmation email (ONLY if email exists)
+        if (!empty($request->email)) {
+            try {
+                Mail::to($request->email)
+                    ->send(new ContactConfirmationMail($request->name));
+            } catch (\Exception $e) {
+                // Optional: log but never break user flow
+                Log::error('Contact mail failed: ' . $e->getMessage());
+            }
+        }
 
         session()->flash('contact_success', [
             'count' => $todayCount,
