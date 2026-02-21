@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Support\Str;
 use App\Models\SystemProblem;
 use App\Models\Gallery;
+use App\Models\ContactRequest;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -131,5 +131,42 @@ class WelcomePageController extends Controller
         ]);
 
         return back()->with('success', '✅ Your problem has been submitted successfully.');
+    }
+
+    public function contactStore(Request $request)
+    {
+        $ip = $request->ip();
+        $today = Carbon::today();
+
+        // Find last request from this IP
+        $lastRequest = ContactRequest::where('ip_address', $ip)
+            ->latest()
+            ->first();
+
+        // Lifetime count
+        $totalCount = $lastRequest ? $lastRequest->total_count + 1 : 1;
+
+        // Today's count (auto reset)
+        $todayCount = ContactRequest::where('ip_address', $ip)
+            ->whereDate('created_at', $today)
+            ->count() + 1;
+
+        ContactRequest::create([
+            'name'        => $request->name,
+            'phone'       => $request->phone,
+            'email'       => $request->email,
+            'subject'     => $request->subject,
+            'message'     => $request->message,
+            'type'        => 'contact',
+            'ip_address'  => $ip,
+            'total_count' => $totalCount,
+        ]);
+
+        session()->flash('contact_success', [
+            'count' => $todayCount,
+            'time'  => now()->format('d M Y, h:i A'),
+        ]);
+
+        return back();
     }
 }

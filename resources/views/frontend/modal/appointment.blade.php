@@ -10,17 +10,17 @@
 
              <div class="form-group">
                  <label>Full Name</label>
-                 <input type="text" placeholder="Full Name">
+                 <input type="text" placeholder="Please enter your full name">
              </div>
 
              <div class="form-group">
                  <label>Phone</label>
-                 <input type="text" placeholder="Phone">
+                 <input type="text" placeholder="Please enter your phone number">
              </div>
 
              <div class="form-group">
                  <label>Email</label>
-                 <input type="email" placeholder="Email">
+                 <input type="email" placeholder="Please enter your email">
              </div>
 
              <div class="form-group">

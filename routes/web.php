@@ -43,8 +43,9 @@ Route::get('/fistula', [WelcomePageController::class, 'fistula'])->name('fistula
 Route::get('/fissure', [WelcomePageController::class, 'fissure'])->name('fissure');
 Route::get('/colorectal_cancer', [WelcomePageController::class, 'colorectal_cancer'])->name('colorectal_cancer');
 Route::get('/irritable_bowel_syndrome', [WelcomePageController::class, 'ibs'])->name('ibs');
-Route::post('/system-problem/store', [WelcomePageController::class, 'system_problem_store'])->name('system_problem.store');
 
+Route::post('/system-problem/store', [WelcomePageController::class, 'system_problem_store'])->name('system_problem.store');
+Route::post('/contact/store', [WelcomePageController::class, 'contactStore'])->name('contact.store');
 Route::get('/user_profile', function () {
     return view('user_profile');
 })->middleware(['auth', 'verified'])->name('profile');

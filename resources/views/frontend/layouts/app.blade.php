@@ -145,6 +145,24 @@
     </script>
     {{-- End of SweetAlert2 notifications --}}
 
+    @if (session('contact_success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Request Submitted',
+                html: `
+            <p>You have submitted <b>{{ session('contact_success.count') }}</b> time(s).</p>
+            <small>Last submitted at<br>
+            {{ session('contact_success.time') }}</small>
+        `,
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000
+            });
+        </script>
+    @endif
+
     {{-- Start of image modal --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -238,6 +256,7 @@
     <script src="{{ asset('js/location.js') }}"></script>
     <script src="{{ asset('js/language.js') }}"></script>
     <script src="{{ asset('js/custom_footer_modal.js') }}"></script>
+
     @if (!Request::is('login'))
         <!-- Google Translate Library -->
         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -252,6 +271,7 @@
             }
         </script>
     @endif
+
 </body>
 
 </html>

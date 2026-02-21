@@ -14,7 +14,7 @@
         <div class="contact-breadcrumb">
             <a href="{{ route('welcome') }}">Home</a>
             <span>></span>
-            <span>Contact Us</span>
+            <a href="{{ route('contact') }}">Contact Us</a>
         </div>
     </div>
 
@@ -24,38 +24,44 @@
             <!-- Left: Appointment Form -->
             <div class="contact-form-wrapper">
                 <h2 class="contact-title">Make an Appointment</h2>
+                <form method="POST" action="{{ route('contact.store') }}">
+                    @csrf
+                    <input type="hidden" name="type" value="contact">
 
-                <form>
+                    <div class="modal-body row">
 
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" placeholder="Full Name">
+                        <div class="col-md-6 mb-2">
+                            <label>Full Name</label>
+                            <input name="name" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                            <label>Phone</label>
+                            <input name="phone" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                            <label>Email</label>
+                            <input name="email" type="email" class="form-control">
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                            <label>Subject</label>
+                            <input name="subject" class="form-control">
+                        </div>
+
+                        <div class="col-12">
+                            <label>Message</label>
+                            <textarea name="message" rows="4" class="form-control"></textarea>
+                        </div>
+
                     </div>
 
-                    <div class="form-group">
-                        <label>Phone</label>
-                        <input type="text" placeholder="Phone">
+                    <div class="modal-footer">
+                        <button class="btn btn-success w-100">
+                            Send Message
+                        </button>
                     </div>
-
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" placeholder="Email">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Subject</label>
-                        <input type="text" placeholder="Subject">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea rows="5" placeholder="Message"></textarea>
-                    </div>
-
-                    <button type="submit" class="contact-btn">
-                        Send Appointment Request
-                    </button>
-
                 </form>
             </div>
 
@@ -89,7 +95,5 @@
 
         </div>
     </section>
-
     @include('frontend.welcome_page.footer')
-
 @endsection
