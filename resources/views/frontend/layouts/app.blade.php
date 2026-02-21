@@ -29,7 +29,10 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/frontend/frontend.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/frontend/custom_appointment.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_appointment_modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_phone_modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_email_modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_location_modal.css') }}">
 </head>
 
 <body>
@@ -45,8 +48,11 @@
         </main>
 
     </div>
-    
-    @include('frontend.welcome_page.modal.appointment')
+
+    @include('frontend.modal.appointment')
+    @include('frontend.modal.phone')
+    @include('frontend.modal.email')
+    @include('frontend.modal.location')
 
     <!-- Bootstrap JS + dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -221,7 +227,11 @@
         });
     </script>
     {{-- End of Scroll Progress Bar --}}
+
     <script src="{{ asset('js/appointment-modal.js') }}"></script>
+    <script src="{{ asset('js/phone.js') }}"></script>
+    <script src="{{ asset('js/email.js') }}"></script>
+    <script src="{{ asset('js/location.js') }}"></script>
 </body>
 
 </html>

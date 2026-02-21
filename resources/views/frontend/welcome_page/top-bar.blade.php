@@ -5,28 +5,29 @@
 
         <!-- LEFT: Contact Info -->
         <div class="top-info">
-            <span>
+            <!-- Location -->
+            <a href="#" class="top-link" id="openLocationModal">
                 <i class="fas fa-map-marker-alt"></i>
-                86 (New), 726/A (Old), Satmasjid Road, Dhanmondi, Dhaka-1209
-            </span>
+                86 (New), 726/A (Old), Satmasjid Road
+            </a>
 
             <span class="divider">|</span>
 
-            <a href="tel:01755697173" class="top-link">
+            <a href="#" class="top-link open-phone-modal">
                 <i class="fas fa-phone-alt"></i>
                 01755697173
             </a>
 
             <span class="divider">|</span>
 
-            <a href="tel:01755697176" class="top-link">
+            <a href="#" class="top-link open-phone-modal">
                 <i class="fas fa-phone-alt"></i>
                 01755697176
             </a>
-
+            
             <span class="divider">|</span>
 
-            <a href="mailto:asifh7000@gmail.com" class="top-link">
+            <a href="#" class="top-link" id="openEmailModal">
                 <i class="fas fa-envelope"></i>
                 asifh7000@gmail.com
             </a>
