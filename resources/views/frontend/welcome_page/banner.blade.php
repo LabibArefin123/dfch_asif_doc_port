@@ -1,4 +1,4 @@
-<section id="banner" class="bg-white w-100 py-1">
+<section id="banner" class="bg-white w-100">
     <link rel="stylesheet" href="{{ asset('css/frontend/custom_banner.css') }}">
 
     <div id="slider" class="position-relative w-100" style="height:70vh;">
