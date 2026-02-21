@@ -6,7 +6,7 @@
 </p>
 
 <p>
-    He will contact you soon.
+    He will contact you soon. 
 </p>
 
 <p style="margin-top:20px;">
