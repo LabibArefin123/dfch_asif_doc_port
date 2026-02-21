@@ -69,24 +69,32 @@
             <!-- Contact -->
             <div class="col-md-3">
                 <h6 class="fw-bold text-warning mb-3">Contact</h6>
+
+                <!-- LOCATION -->
                 <p class="small mb-2">
-                    <a href="#" class="top-link" id="openLocationModal">
-                        <i class="fas fa-map-marker-alt"></i>
-                        86 (New), 726/A (Old), Satmasjid Road
-                    </a>
+                    📍
+                    <span class="footer-action text-white" data-action="location">
+                        86 (New), 726/A (Old), Satmasjid Road,<br>
+                        Dhanmondi, Dhaka-1209
+                    </span>
                 </p>
-                <p class="small mb-1">
-                    📞 <a href="tel:+8801755697173" class="text-white text-decoration-none">
-                        01755-697173
-                    </a>
+
+                <!-- CALL / WHATSAPP -->
+                <p class="small mb-2">
+                    📞
+                    <span class="footer-action text-white" data-action="phone">
+                        01755-697173 / 01755-697176
+                    </span>
                 </p>
+
+                <!-- EMAIL -->
                 <p class="small">
-                    ✉ <a href="mailto:asifh7000@gmail.com" class="text-white text-decoration-none">
-                        asifh7000@gmail.com
-                    </a>
+                    ✉
+                    <span class="footer-action text-white" data-action="email">
+                        info@fazlulhaquehospital.com
+                    </span>
                 </p>
             </div>
-
         </div>
 
         <!-- Chamber Hours Horizontal -->

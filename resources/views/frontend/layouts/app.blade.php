@@ -53,6 +53,9 @@
     @include('frontend.modal.phone')
     @include('frontend.modal.email')
     @include('frontend.modal.location')
+    @include('frontend.modal.footer.phone')
+    @include('frontend.modal.footer.email')
+    @include('frontend.modal.footer.location')
     <!-- Hidden Google Translate Widget -->
     <div id="google_translate_element" style="display:none;"></div>
     <!-- Bootstrap JS + dependencies -->
@@ -234,6 +237,7 @@
     <script src="{{ asset('js/email.js') }}"></script>
     <script src="{{ asset('js/location.js') }}"></script>
     <script src="{{ asset('js/language.js') }}"></script>
+    <script src="{{ asset('js/custom_footer_modal.js') }}"></script>
     @if (!Request::is('login'))
         <!-- Google Translate Library -->
         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
