@@ -67,7 +67,8 @@
                                 Colorectal Cancer </a> </li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="{{ route('gallery') }}"
+                        class="nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}"> Gallery </a> </li>
                 <li class="nav-item"> <a href="{{ route('book') }}"
                         class="nav-link {{ request()->routeIs('book') ? 'active' : '' }}"> Book </a> </li>
                 <li class="nav-item"> <a href="{{ route('faq') }}"

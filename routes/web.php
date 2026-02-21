@@ -5,7 +5,7 @@ use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\SystemUserController;
 use App\Http\Controllers\BanUserController;
@@ -23,6 +23,9 @@ Route::get('/about', [WelcomePageController::class, 'about'])->name('about');
 
 //FAQ Section
 Route::get('/faq', [WelcomePageController::class, 'faq'])->name('faq');
+
+//Gallery Section
+Route::get('/gallery', [WelcomePageController::class, 'gallery'])->name('gallery');
 
 //Contact Section
 Route::get('/contact', [WelcomePageController::class, 'contact'])->name('contact');
@@ -57,6 +60,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Organization Routes
     Route::resource('organizations', OrganizationController::class);
+
+    // Organization Routes
+    Route::resource('galleries', GalleryController::class);
 
     Route::get('/user_profile', [ProfileController::class, 'user_profile_show'])->name('user_profile_show');
     Route::get('/user_profile_edit', [ProfileController::class, 'user_profile_edit'])->name('user_profile_edit');

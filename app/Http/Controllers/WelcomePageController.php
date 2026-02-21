@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use App\Models\SystemProblem;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -53,7 +54,7 @@ class WelcomePageController extends Controller
     {
         return view('frontend.conditions.fistula');
     }
-    
+
     public function fissure()
     {
         return view('frontend.conditions.fissure');
@@ -72,6 +73,12 @@ class WelcomePageController extends Controller
     public function faq()
     {
         return view('frontend.faq');
+    }
+
+    public function gallery()
+    {
+        $galleries = Gallery::latest()->get();
+        return view('frontend.gallery', compact('galleries'));
     }
 
     public function contact()

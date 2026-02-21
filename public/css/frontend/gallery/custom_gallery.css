@@ -1,0 +1,85 @@
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.preview-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.preview-box img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+}
+
+.preview-box h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #ff9900;
+    color: #fff;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.thumbnail {
+    flex: 0 0 auto;
+    border: 2px solid #ccc;
+    /* default ash color */
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        border 0.3s ease;
+}
+
+.thumbnail img {
+    height: 80px;
+    width: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.thumbnail.active {
+    border-color: #ff9900;
+}

@@ -413,6 +413,13 @@ return [
                 ],
             ],
         ],
+
+        [
+            'text'    => 'Gallery Management',
+            'icon'    => 'fas fa-school',
+            'route'  => 'galleries.index',
+            'active' => ['galleries*'],
+        ],
       
         [
             'text'    => 'Setting Management',

@@ -234,10 +234,20 @@
     <script src="{{ asset('js/email.js') }}"></script>
     <script src="{{ asset('js/location.js') }}"></script>
     <script src="{{ asset('js/language.js') }}"></script>
+    @if (!Request::is('login'))
+        <!-- Google Translate Library -->
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Google Translate Library -->
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!------start of translate english/bangla link js--->
+        <script>
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,bn',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>
+    @endif
 </body>
 
 </html>
