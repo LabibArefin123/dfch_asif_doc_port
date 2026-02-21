@@ -5,6 +5,14 @@
 <link rel="stylesheet" href="{{ asset('css/frontend/gallery/custom_gallery.css') }}">
 @section('content')
     @include('frontend.welcome_page.header')
+    <div class="gallery-banner" style="background-image: url('{{ asset('uploads/images/welcome_page/cover.png') }}');">
+        <div class="gallery-overlay"></div>
+        <div class="gallery-breadcrumb">
+            <a href="{{ route('welcome') }}">Home</a>
+            <span>></span>
+           <a href="{{ route('gallery') }}" class="doc-link text-decoration-none">Gallery</a>
+        </div>
+    </div>
     <!-- Page Header -->
     <section class="page-header" style="background: #f7f7f7; padding: 40px 0;">
         <div class="container">

@@ -29,8 +29,17 @@
                             <td class="text-center">{{ $loop->iteration }}</td>
                             <td class="text-center">
                                 @if ($gal->image)
-                                    <img src="{{ asset('uploads/images/gallery/' . $gal->image) }}" alt="Gallery Image"
-                                        width="150" height="75">
+                                    <img src="{{ asset('uploads/images/gallery/' . $gal->image) }}"
+                                        class="gallery-thumb img-thumbnail"
+                                        data-full="{{ asset('uploads/images/gallery/' . $gal->image) }}"
+                                        style="width:120px; height:90px; object-fit:cover; cursor:pointer;">
+
+                                    <div class="mt-2">
+                                        <button class="btn btn-sm btn-info orientation-btn"
+                                            data-img="{{ asset('uploads/images/gallery/' . $gal->image) }}">
+                                            Detecting...
+                                        </button>
+                                    </div>
                                 @else
                                     <span class="text-muted">No Image</span>
                                 @endif
@@ -64,20 +73,73 @@
                 </tbody>
             </table>
         </div>
+        <!-- Image Preview Modal -->
+        <div class="modal fade" id="imagePreviewModal" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Image Preview</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img id="modalImage" class="img-fluid" style="max-height:500px; object-fit:contain;">
+                        <div class="mt-3" id="modalInfo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @stop
 
 @section('js')
-    {{-- jQuery + DataTables + SweetAlert --}}
-
     <script>
-        $(document).ready(function() {
-            // Initialize DataTable
-            $('#galleryTable').DataTable({
-                responsive: true,
-                autoWidth: false,
-                pageLength: 10,
-                ordering: true
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const buttons = document.querySelectorAll('.orientation-btn');
+
+            buttons.forEach(button => {
+
+                const imageUrl = button.dataset.img;
+                const img = new Image();
+
+                img.onload = function() {
+
+                    const width = img.width;
+                    const height = img.height;
+
+                    let orientation = "";
+                    let btnClass = "";
+
+                    if (width > height) {
+                        orientation = "Landscape";
+                        btnClass = "btn-success";
+                    } else if (height > width) {
+                        orientation = "Portrait";
+                        btnClass = "btn-warning";
+                    } else {
+                        orientation = "Equal";
+                        btnClass = "btn-secondary";
+                    }
+
+                    button.textContent = orientation;
+                    button.classList.remove('btn-info');
+                    button.classList.add(btnClass);
+
+                    // Click to open modal
+                    button.addEventListener('click', function() {
+                        document.getElementById('modalImage').src = imageUrl;
+                        document.getElementById('modalInfo').innerHTML =
+                            `Dimensions: ${width}px × ${height}px <br>
+                     Orientation: ${orientation}`;
+                        $('#imagePreviewModal').modal('show');
+                    });
+
+                };
+
+                img.src = imageUrl;
+
             });
 
         });

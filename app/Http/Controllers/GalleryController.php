@@ -22,36 +22,50 @@ class GalleryController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'image' => 'nullable|file|max:5120', // user-uploaded file
-            'icon'  => 'nullable|string',        // edited image (base64 from toast)
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
+            'icon'  => 'nullable|string',
         ]);
 
-        $filePath = null;
-        $destination = 'uploads/images/gallery/';
+        $destination = public_path('uploads/images/gallery/');
 
-        if (!file_exists(public_path($destination))) {
-            mkdir(public_path($destination), 0777, true);
+        if (!file_exists($destination)) {
+            mkdir($destination, 0755, true);
         }
 
-        // Build filename -> 15 July 2025_200212_gallery.jpg
-        $filename = now()->format('d_m_Y_His') . '_gallery';
+        $filePath = null;
+        $filename = now()->format('d_m_Y_His') . '_' . uniqid() . '_gallery';
 
-        // ✅ Priority: Edited image from Toast (icon)
+        // ✅ Priority: Base64 Image
         if ($request->icon && preg_match('/^data:image\/(\w+);base64,/', $request->icon, $type)) {
-            $image = substr($request->icon, strpos($request->icon, ',') + 1);
-            $image = base64_decode($image);
+
+            $allowedTypes = ['jpg', 'jpeg', 'png', 'webp'];
+
             $ext = strtolower($type[1]);
 
+            if (!in_array($ext, $allowedTypes)) {
+                return back()->withErrors(['icon' => 'Invalid image type']);
+            }
+
+            $image = substr($request->icon, strpos($request->icon, ',') + 1);
+            $image = base64_decode($image);
+
             $fullName = $filename . '.' . $ext;
-            file_put_contents(public_path($destination . $fullName), $image);
-            $filePath =  $fullName;
+
+            file_put_contents($destination . $fullName, $image);
+
+            $filePath = $fullName;
         }
-        // ✅ Fallback: Normal file upload
+
+        // ✅ Normal Upload
         elseif ($request->hasFile('image')) {
+
             $file = $request->file('image');
-            $fullName = $filename . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path($destination), $fullName);
-            $filePath =  $fullName;
+            $ext = $file->getClientOriginalExtension();
+
+            $fullName = $filename . '.' . $ext;
+            $file->move($destination, $fullName);
+
+            $filePath = $fullName;
         }
 
         Gallery::create([
@@ -59,7 +73,9 @@ class GalleryController extends Controller
             'image' => $filePath,
         ]);
 
-        return redirect()->route('galleries.index')->with('success', 'Gallery created successfully.');
+        return redirect()
+            ->route('galleries.index')
+            ->with('success', 'Gallery created successfully.');
     }
 
     public function show(Gallery $gallery)

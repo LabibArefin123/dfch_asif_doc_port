@@ -77,7 +77,7 @@ class WelcomePageController extends Controller
 
     public function gallery()
     {
-        $galleries = Gallery::latest()->get();
+        $galleries = Gallery::all();
         return view('frontend.gallery', compact('galleries'));
     }
 

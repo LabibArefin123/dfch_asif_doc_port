@@ -21,12 +21,14 @@
             <div class="col-md-3">
                 <h6 class="fw-bold text-warning mb-3">Professional Profile</h6>
                 <ul class="list-unstyled small">
-                    <li><a href="#profile" class="text-white text-decoration-none">Doctor’s Profile</a></li>
-                    <li><a href="#education" class="text-white text-decoration-none">Educational Background</a></li>
-                    <li><a href="#conference" class="text-white text-decoration-none">International Conference</a></li>
-                    <li><a href="#journal" class="text-white text-decoration-none">Journal Publication</a></li>
-                    <li><a href="#membership" class="text-white text-decoration-none">Membership</a></li>
-                    <li><a href="#consultant" class="text-white text-decoration-none">Consultant</a></li>
+                    <li><a href="{{ route('about') }}" class="text-white text-decoration-none">Doctor’s Profile</a></li>
+                    <li><a href="{{ route('page_1') }}" class="text-white text-decoration-none">Educational
+                            Background</a></li>
+                    <li><a href="{{ route('page_2') }}" class="text-white text-decoration-none">International
+                            Conference</a></li>
+                    <li><a href="{{ route('page_3') }}" class="text-white text-decoration-none">Journal Publication</a>
+                    </li>
+                    <li><a href="{{ route('page_4') }}" class="text-white text-decoration-none">Membership</a></li>
                 </ul>
             </div>
 
@@ -68,8 +70,10 @@
             <div class="col-md-3">
                 <h6 class="fw-bold text-warning mb-3">Contact</h6>
                 <p class="small mb-2">
-                    📍 86 (New), 726/A (Old), Satmasjid Road,<br>
-                    Dhanmondi, Dhaka-1209
+                    <a href="#" class="top-link" id="openLocationModal">
+                        <i class="fas fa-map-marker-alt"></i>
+                        86 (New), 726/A (Old), Satmasjid Road
+                    </a>
                 </p>
                 <p class="small mb-1">
                     📞 <a href="tel:+8801755697173" class="text-white text-decoration-none">
