@@ -1,5 +1,5 @@
 body {
-    padding-top: 60px; /* 40px topbar + ~60px navbar */
+    padding-top: 100px; /* 40px topbar + ~60px navbar */
 }
 
 @keyframes bounce {

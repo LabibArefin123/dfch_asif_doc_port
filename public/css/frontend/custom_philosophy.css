@@ -1,0 +1,82 @@
+/* ===============================
+   SECTION TITLE STYLE
+================================ */
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #555;
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+/* Green curved animated line */
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 10%;
+    bottom: -15px;
+    width: 80%;
+    height: 8px;
+    background: #5fbf63;
+    border-radius: 50px;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    animation: drawLine 2.5s ease-in-out infinite alternate;
+}
+
+.section-header h2 {
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+/* ================================
+   INDIVIDUALIZED SURGERY / PHILOSOPHY SECTION
+================================ */
+
+.philosophy-section {
+    padding: 70px 0;
+    background: #f9fbfd;
+}
+
+.philosophy-section .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 36px; /* slightly smaller than publications title but bold */
+    color: #333;
+}
+
+.philosophy-content {
+    max-width: 1200px;
+    margin: auto;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.philosophy-content p {
+    margin-bottom: 20px;
+}
+
+.philosophy-section .section-title span {
+    font-size: 28px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.philosophy-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}

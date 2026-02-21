@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row mb-4">
             <div class="col text-center">
-                <h2 class="">Professional Membership</h2>
+                <h2 class="">PROFESSIONAL MEMBERSHIP</h2>
                 <p class="small text-muted">Driving technology and excellence in colorectal surgery</p>
             </div>
         </div>
