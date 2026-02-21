@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ContactRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -14,15 +15,36 @@ class ContactRequestController extends Controller
 
     public function index(Request $request)
     {
-        // Fetch all contact requests for Blade table
-        $totalContactRequests = ContactRequest::latest()->get();
+        if ($request->ajax()) {
+            $totalContactRequests = ContactRequest::latest();
 
-        return view(
-            'backend.setting_management.contact_requests.index',
-            compact('totalContactRequests')
-        );
+            return DataTables::of($totalContactRequests)
+                ->addIndexColumn()
+                ->addColumn('message', function ($row) {
+                    $words = explode(' ', $row->message);
+                    if (count($words) > 5) {
+                        $shortMessage = implode(' ', array_slice($words, 0, 5)) . '...';
+                        return '<span title="Click to view full message" class="text-primary view-full-message" style="cursor:pointer;" data-message="' . htmlspecialchars($row->message) . '">' . $shortMessage . '</span>';
+                    }
+                    return $row->message;
+                })
+                ->addColumn('total_today', function ($row) {
+                    return ContactRequest::where('id', $row->id)
+                        ->whereDate('created_at', Carbon::today())
+                        ->count();
+                })
+                ->addColumn('created_at', function ($row) {
+                    return Carbon::parse($row->created_at)->format('d F Y (g:i A)');
+                })
+                ->addColumn('action', function ($row) {
+                    return '<a href="' . route('contact_requests.show', $row->id) . '" class="btn btn-sm btn-primary">View</a>';
+                })
+                ->rawColumns(['message', 'action'])
+                ->make(true);
+        }
+
+        return view('backend.setting_management.contact_requests.index');
     }
-
     /**
      * Show the form for creating a new request (optional – usually frontend).
      */
