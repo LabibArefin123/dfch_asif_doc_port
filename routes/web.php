@@ -2,13 +2,14 @@
 
 use App\Http\Controllers\WelcomePageController;
 use App\Http\Controllers\OrganizationController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\SystemUserController;
 use App\Http\Controllers\BanUserController;
+use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SystemProblemController;
@@ -62,15 +63,13 @@ Route::group(['middleware' => 'auth'], function () {
     // Organization Routes
     Route::resource('organizations', OrganizationController::class);
 
-    // Organization Routes
+    // Gallery Routes
     Route::resource('galleries', GalleryController::class);
 
+    //Profile Section
     Route::get('/user_profile', [ProfileController::class, 'user_profile_show'])->name('user_profile_show');
     Route::get('/user_profile_edit', [ProfileController::class, 'user_profile_edit'])->name('user_profile_edit');
-    Route::put('/user_profile_edit', [ProfileController::class, 'user_profile_update'])->name('user_profile_update');
-    Route::put('/user_password_update', [ProfileController::class, 'updatePassword'])->name('user_password_update');
-    Route::get('/user_password_edit', [ProfileController::class, 'editPassword'])->name('user_password_edit');
-    Route::get('/user_password_reset', [ProfileController::class, 'resetPassword'])->name('user_password_reset');
+    Route::put('/user_profile_update', [ProfileController::class, 'user_profile_update'])->name('user_profile_update');
 
     //Setting Management
     Route::resource('roles', RoleController::class);
@@ -79,8 +78,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('system_users', SystemUserController::class);
     Route::resource('ban_users', BanUserController::class);
     Route::resource('system_problems', SystemProblemController::class);
+    Route::resource('contact_requests', ContactRequestController::class);
     Route::post('/system-users/{user}/change-password', [SystemUserController::class, 'updatePassword'])->name('system_users.password.update');
-    //Setting 
+    
+    //Setting Routes
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::get('/settings/password_policy', [SettingController::class, 'password_policy'])->name('settings.password_policy');
     Route::get('/settings/2fa', [SettingController::class, 'show2FA'])->name('settings.2fa');

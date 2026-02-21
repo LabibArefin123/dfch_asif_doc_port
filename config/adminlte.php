@@ -454,6 +454,13 @@ return [
                     'icon' => 'fas fa-user-slash',
                 ],
                 [
+                    'text' => 'Contact Requests',
+                    'route' => 'contact_requests.index',
+                    'can' => 'contact_requests.index',
+                    'active' => ['contact_requests*'],
+                    'icon' => 'fas fa-user-slash',
+                ],
+                [
                     'text' => 'System Problems',
                     'route' => 'system_problems.index',
                     'can' => 'system_problems.index',
