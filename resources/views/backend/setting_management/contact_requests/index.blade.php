@@ -33,7 +33,7 @@
                             <td>{{ $request->email }}</td>
                             <td>{{ ucfirst($request->type) }}</td>
                             <td>{{ $request->created_at->isToday() ? 1 : 0 }}</td>
-                            <td>{{ $request->created_at->format('Y-m-d H:i') }}</td>
+                            <td>{{ \Carbon\Carbon::parse($request->created_at)->format('d F Y (g:i A)') }}</td>
                             <td>
                                 <a href="{{ route('contact_requests.show', $request->id) }}"
                                     class="btn btn-sm btn-primary">View</a>
@@ -52,7 +52,11 @@
         <button type="button" class="btn-close btn-close-white float-end" onclick="closeDtToast()"></button>
     </div>
 
-    <div class="mb-4"></div>
+    <div class="card mt-4">
+        <div class="card-body" style="height:50px;">
+            <!-- spacing card -->
+        </div>
+    </div>
 @stop
 
 @section('js')

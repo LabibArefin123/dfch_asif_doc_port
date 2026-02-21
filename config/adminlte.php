@@ -458,7 +458,7 @@ return [
                     'route' => 'contact_requests.index',
                     'can' => 'contact_requests.index',
                     'active' => ['contact_requests*'],
-                    'icon' => 'fas fa-user-slash',
+                    'icon' => 'fas fa-envelope-open-text',
                 ],
                 [
                     'text' => 'System Problems',

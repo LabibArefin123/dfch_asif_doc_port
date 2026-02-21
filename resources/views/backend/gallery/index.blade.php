@@ -73,15 +73,18 @@
                 </tbody>
             </table>
         </div>
+        <div class="card mt-4">
+            <div class="card-body" style="height:50px;">
+                <!-- spacing card -->
+            </div>
+        </div>
         <!-- Image Preview Modal -->
         <div class="modal fade" id="imagePreviewModal" tabindex="-1">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Image Preview</h5>
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span>&times;</span>
-                        </button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body text-center">
                         <img id="modalImage" class="img-fluid" style="max-height:500px; object-fit:contain;">
