@@ -24,7 +24,7 @@
                 <i class="fas fa-phone-alt"></i>
                 01755697176
             </a>
-            
+
             <span class="divider">|</span>
 
             <a href="#" class="top-link" id="openEmailModal">
@@ -48,3 +48,4 @@
 
     </div>
 </div>
+

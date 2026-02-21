@@ -30,7 +30,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/frontend/frontend.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_appointment_modal.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_phone_modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_contact_modal.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_email_modal.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_location_modal.css') }}">
 </head>
@@ -53,7 +53,8 @@
     @include('frontend.modal.phone')
     @include('frontend.modal.email')
     @include('frontend.modal.location')
-
+    <!-- Hidden Google Translate Widget -->
+    <div id="google_translate_element" style="display:none;"></div>
     <!-- Bootstrap JS + dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
@@ -232,6 +233,49 @@
     <script src="{{ asset('js/phone.js') }}"></script>
     <script src="{{ asset('js/email.js') }}"></script>
     <script src="{{ asset('js/location.js') }}"></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,bn',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setGoogleLanguage(lang) {
+            const interval = setInterval(() => {
+                const select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    select.value = lang;
+                    select.dispatchEvent(new Event('change'));
+                    clearInterval(interval);
+                }
+            }, 200);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const btn = document.getElementById("langToggle");
+
+            // Restore saved language
+            const savedLang = localStorage.getItem("site_lang") || "en";
+            btn.innerText = savedLang.toUpperCase();
+            if (savedLang === "bn") setGoogleLanguage("bn");
+
+            btn.addEventListener("click", function() {
+                const currentLang = btn.innerText.toLowerCase();
+                const newLang = currentLang === "en" ? "bn" : "en";
+
+                setGoogleLanguage(newLang);
+                btn.innerText = newLang.toUpperCase();
+                localStorage.setItem("site_lang", newLang);
+            });
+        });
+    </script>
+
+    <!-- Google Translate Library -->
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!------start of translate english/bangla link js--->
 </body>
 
 </html>
