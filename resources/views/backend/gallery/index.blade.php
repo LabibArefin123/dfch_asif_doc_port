@@ -14,28 +14,28 @@
 @section('content')
     <div class="card shadow">
         <div class="card-body table-responsive">
-            <table id="galleryTable" class="table table-bordered table-striped">
+            <table id="dataTables" class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th class="text-center">#</th>
-                        <th>Title</th>
                         <th class="text-center">Image</th>
+                        <th>Title</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($galleries as $key => $gal)
                         <tr>
-                            <td class="text-center">{{ $key + 1 }}</td>
-                            <td>{{ $gal->title }}</td>
+                            <td class="text-center">{{ $loop->iteration }}</td>
                             <td class="text-center">
                                 @if ($gal->image)
                                     <img src="{{ asset('uploads/images/gallery/' . $gal->image) }}" alt="Gallery Image"
-                                        width="50" height="50">
+                                        width="150" height="75">
                                 @else
                                     <span class="text-muted">No Image</span>
                                 @endif
                             </td>
+                            <td>{{ $gal->title }}</td>
 
                             <td class="text-center">
                                 <a href="{{ route('galleries.edit', $gal->id) }}" class="btn btn-primary btn-sm">
@@ -69,10 +69,6 @@
 
 @section('js')
     {{-- jQuery + DataTables + SweetAlert --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
         $(document).ready(function() {
@@ -84,23 +80,6 @@
                 ordering: true
             });
 
-            // SweetAlert Delete Confirmation
-            $('.delete-btn').on('click', function() {
-                let id = $(this).data('id');
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "This action cannot be undone!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#6c757d',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $(`#delete-form-${id}`).submit();
-                    }
-                });
-            });
         });
     </script>
 @stop

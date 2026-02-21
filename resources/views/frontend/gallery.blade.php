@@ -14,12 +14,7 @@
 
     <!-- Gallery Section -->
     <section class="gallery-section py-5">
-        <div class="container">
-            <p class="text-center mb-5" style="font-size: 16px; color: #555;">
-                এলাকাবাসীর সেবার মনোভাব নিয়ে মান সম্পন্ন শিক্ষা প্রসারে এবং কৃতিত্বপূর্ণ ফল অর্জন করে এই প্রতিষ্ঠানটি
-                ইতিমধ্যে একটি স্থান করে নিয়েছে।
-            </p>
-
+        <div class="container"> 
             <div class="gallery-container">
                 <!-- Big Preview with Navigation Buttons -->
                 <div class="preview-box">

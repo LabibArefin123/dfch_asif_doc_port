@@ -116,7 +116,7 @@
             </div>
         </div>
 
-        <!-- Global Error Modal -->
+        <!-- Start of Global Error Modal -->
         <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-md" role="document">
                 <div class="modal-content">
