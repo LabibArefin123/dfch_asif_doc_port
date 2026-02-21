@@ -29,8 +29,8 @@ class ContactRequestController extends Controller
                     return $row->message;
                 })
                 ->addColumn('total_today', function ($row) {
-                    return ContactRequest::where('id', $row->id)
-                        ->whereDate('created_at', Carbon::today())
+                    return ContactRequest::where('ip_address', $row->ip_address)
+      
                         ->count();
                 })
                 ->addColumn('created_at', function ($row) {
