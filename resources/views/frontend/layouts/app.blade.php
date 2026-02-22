@@ -16,6 +16,14 @@
         @endif
     </title>
 
+    @hasSection('meta')
+        @yield('meta')
+    @else
+        <meta name="description"
+            content="Dr. Asif Almas Haque is a leading colorectal surgeon in Bangladesh specializing in piles, fissure, fistula and colorectal cancer treatment.">
+        <link rel="canonical" href="{{ url()->current() }}">
+    @endif
+
     <!-- Fonts -->
     <link rel="icon" type="image/png" href="{{ asset('uploads/images/icon2.JPG') }}">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -27,7 +35,7 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
     <link rel="stylesheet" href="{{ asset('css/frontend/frontend.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_appointment_modal.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_contact_modal.css') }}">
@@ -76,72 +84,12 @@
         <i class="bi bi-arrow-up"></i>
     </button>
 
-    <script>
-        const backToTopBtn = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
-
     {{-- Start of SweetAlert2 notifications --}}
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-
-            // SUCCESS MESSAGE
-            @if (session('success'))
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Problem Submitted',
-                    text: "{{ session('success') }}",
-                    showConfirmButton: false,
-                    timer: 2500,
-                    timerProgressBar: true,
-                    position: 'center',
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                }).then(() => {
-                    if (typeof closeProblemModal === "function") {
-                        closeProblemModal(); // Close modal after success
-                    }
-                });
-            @endif
-
-            // VALIDATION ERRORS
-            @if ($errors->any())
-                let errorMessages = `
-        @foreach ($errors->all() as $error)
-            • {{ $error }}\n
-        @endforeach
-        `;
-
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Submission Failed',
-                    text: errorMessages,
-                    confirmButtonColor: '#dc3545',
-                    position: 'center'
-                });
-
-                // Keep modal open if error
-                if (typeof openProblemModal === "function") {
-                    openProblemModal();
-                }
-            @endif
-        });
+        window.appData = {
+            success: @json(session('success')),
+            errors: @json($errors->all())
+        };
     </script>
     {{-- End of SweetAlert2 notifications --}}
 
@@ -162,48 +110,6 @@
             });
         </script>
     @endif
-
-    {{-- Start of image modal --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // create modal container
-            const modal = document.createElement('div');
-            modal.classList.add('image-modal');
-
-            // create modal box inside modal
-            modal.innerHTML = `
-        <div class="modal-box">
-            <span class="close-btn">&times;</span>
-            <img src="" alt="Magnified Image">
-        </div>
-    `;
-            document.body.appendChild(modal);
-
-            const modalImg = modal.querySelector('img');
-            const closeBtn = modal.querySelector('.close-btn');
-
-            // open modal on click
-            document.querySelectorAll('.magnify-img').forEach(img => {
-                img.addEventListener('click', () => {
-                    modal.style.display = 'flex';
-                    modalImg.src = img.src;
-                });
-            });
-
-            // close modal on close button click
-            closeBtn.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-
-            // close modal when clicking outside the modal-box
-            modal.addEventListener('click', (e) => {
-                if (!e.target.closest('.modal-box')) {
-                    modal.style.display = 'none';
-                }
-            });
-        });
-    </script>
-    {{-- end of image modal --}}
 
     {{-- start of land phone js  --}}
     <script>
@@ -233,29 +139,16 @@
     </script>
     {{-- end of land phone js  --}}
 
-    {{-- Start of Scroll Progress Bar --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const progressBar = document.getElementById('scrollProgress');
-
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.scrollY; // Current scroll position
-                const docHeight = document.documentElement.scrollHeight - window
-                    .innerHeight; // Total scrollable height
-                const scrollPercent = (scrollTop / docHeight) * 100; // Percentage scrolled
-
-                progressBar.style.width = scrollPercent + "%";
-            });
-        });
-    </script>
-    {{-- End of Scroll Progress Bar --}}
-
-    <script src="{{ asset('js/appointment-modal.js') }}"></script>
-    <script src="{{ asset('js/phone.js') }}"></script>
-    <script src="{{ asset('js/email.js') }}"></script>
-    <script src="{{ asset('js/location.js') }}"></script>
-    <script src="{{ asset('js/language.js') }}"></script>
-    <script src="{{ asset('js/custom_footer_modal.js') }}"></script>
+    <script src="{{ asset('js/sweet_alert.js') }}"></script> {{-- Sweet Alert Modal JS --}}
+    <script src="{{ asset('js/appointment-modal.js') }}"></script> {{-- Appointment Modal JS --}}
+    <script src="{{ asset('js/phone.js') }}"></script> {{-- Phone Modal JS --}}
+    <script src="{{ asset('js/email.js') }}"></script> {{-- Email Modal JS --}}
+    <script src="{{ asset('js/location.js') }}"></script> {{-- Location Modal JS --}}
+    <script src="{{ asset('js/language.js') }}"></script> {{-- Language Modal JS --}}
+    <script src="{{ asset('js/magnified_image_modal.js') }}"></script> {{-- Magnified Image Modal JS --}}
+    <script src="{{ asset('js/scroll_progress.js') }}"></script> {{-- Scroll Progress JS --}}
+    <script src="{{ asset('js/custom_back_top_button.js') }}"></script> {{-- Back to Top JS --}}
+    <script src="{{ asset('js/custom_footer_modal.js') }}"></script> {{-- Footer Modal JS --}}
 
     @if (!Request::is('login'))
         <!-- Google Translate Library -->
