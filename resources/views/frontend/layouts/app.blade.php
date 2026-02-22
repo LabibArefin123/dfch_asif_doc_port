@@ -93,25 +93,14 @@
     </script>
     {{-- End of SweetAlert2 notifications --}}
 
-    @if (session('contact_success'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Request Submitted',
-                html: `
-            <p>You have submitted <b>{{ session('contact_success.count') }}</b> time(s).</p>
-            <small>Last submitted at<br>
-            {{ session('contact_success.time') }}</small>
-        `,
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 4000
-            });
-        </script>
-    @endif
+    {{-- Start of Contact Succss Swal Notification --}}
+    <script>
+        window.contactSuccess = @json(session('contact_success', null));
+    </script>
+    {{-- End of Contact Succss Swal Notification --}}
 
-    <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
+    <script src="{{ asset('js/custom_frontend/contact_success.js') }}"></script> {{-- Contact Success Notification JS --}}
     <script src="{{ asset('js/custom_frontend/appointment-modal.js') }}"></script> {{-- Appointment Modal JS --}}
     <script src="{{ asset('js/custom_frontend/phone.js') }}"></script> {{-- Phone Modal JS --}}
     <script src="{{ asset('js/custom_frontend/email.js') }}"></script> {{-- Email Modal JS --}}
