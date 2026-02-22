@@ -1,6 +1,28 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Book')
+@section('title', 'Book | Dr. Asif Almas Haque')
+
+@section('meta')
+    <!-- Meta Description & Keywords -->
+    <meta name="description"
+        content="Learn about Dr. Asif Almas Haque's comprehensive guide on piles and colorectal conditions. A patient-friendly surgical guide in Bangladesh.">
+    <meta name="keywords" content="Dr Asif Almas Haque book, piles guide, colorectal surgery book, patient guide, Bangladesh">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Book | Dr. Asif Almas Haque">
+    <meta property="og:description"
+        content="Explore Dr. Asif Almas Haque's patient-friendly guide on piles and colorectal conditions, offering expert surgical insights.">
+    <meta property="og:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book | Dr. Asif Almas Haque">
+    <meta name="twitter:description"
+        content="Patient-friendly guide by Dr. Asif Almas Haque on piles and colorectal conditions. Learn surgical insights and expert tips.">
+    <meta name="twitter:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
+@endsection
 
 <link rel="stylesheet" href="{{ asset('css/frontend/book/custom_book.css') }}">
 
