@@ -1,6 +1,31 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Photo Gallery')
+@section('title', 'Photo Gallery | Dr. Asif Almas Haque')
+
+@section('meta')
+    <!-- Meta Description & Keywords -->
+    <meta name="description"
+        content="Explore the photo gallery of Dr. Asif Almas Haque, showcasing surgical procedures, conferences, patient care, and professional events in colorectal surgery.">
+    <meta name="keywords"
+        content="Dr Asif Almas Haque gallery, colorectal surgeon photos, surgical events, medical gallery, Dhaka">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Photo Gallery | Dr. Asif Almas Haque">
+    <meta property="og:description"
+        content="View professional photos of Dr. Asif Almas Haque including surgical procedures, conferences, and hospital events.">
+    <meta property="og:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Photo Gallery | Dr. Asif Almas Haque">
+    <meta name="twitter:description"
+        content="View professional photos of Dr. Asif Almas Haque including surgical procedures, conferences, and hospital events.">
+    <meta name="twitter:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
+@endsection
+
+<link rel="stylesheet" href="{{ asset('css/frontend/gallery/custom_gallery.css') }}">
 
 <link rel="stylesheet" href="{{ asset('css/frontend/gallery/custom_gallery.css') }}">
 @section('content')
@@ -10,7 +35,7 @@
         <div class="gallery-breadcrumb">
             <a href="{{ route('welcome') }}">Home</a>
             <span>></span>
-           <a href="{{ route('gallery') }}" class="doc-link text-decoration-none">Gallery</a>
+            <a href="{{ route('gallery') }}" class="doc-link text-decoration-none">Gallery</a>
         </div>
     </div>
     <!-- Page Header -->

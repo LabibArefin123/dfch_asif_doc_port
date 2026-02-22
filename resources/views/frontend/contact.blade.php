@@ -1,6 +1,50 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Contact Us')
+@section('title', 'Contact | Dr. Asif Almas Haque')
+
+@section('meta')
+    <!-- Meta Description & Keywords -->
+    <meta name="description" content="Get in touch with Dr. Asif Almas Haque, leading colorectal surgeon in Dhaka, Bangladesh, for appointments or inquiries.">
+    <meta name="keywords" content="Contact Dr Asif Almas Haque, colorectal surgeon Dhaka, appointment, clinic contact">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact | Dr. Asif Almas Haque">
+    <meta property="og:description" content="Reach out to Dr. Asif Almas Haque, expert in colorectal, laparoscopic, and laser surgery.">
+    <meta property="og:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | Dr. Asif Almas Haque">
+    <meta name="twitter:description" content="Reach out to Dr. Asif Almas Haque for appointments or queries regarding colorectal treatments.">
+    <meta name="twitter:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
+
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Dr. Asif Almas Haque",
+      "image": "{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}",
+      "description": "Consult Dr. Asif Almas Haque, a leading colorectal surgeon in Dhaka, Bangladesh.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Your Clinic Street Address",
+        "addressLocality": "Dhaka",
+        "postalCode": "Your Postal Code",
+        "addressCountry": "BD"
+      },
+      "telephone": "Your Clinic Phone Number",
+      "url": "{{ url()->current() }}",
+      "sameAs": [
+        "https://www.facebook.com/your-page",
+        "https://www.youtube.com/@asifh7000",
+        "https://www.linkedin.com/in/your-profile"
+      ]
+    }
+    </script>
+@endsection
 
 <link rel="stylesheet" href="{{ asset('css/frontend/contact/custom_contact.css') }}">
 
@@ -32,12 +76,12 @@
 
                         <div class="col-md-6 mb-2">
                             <label>Full Name</label>
-                            <input name="name" class="form-control" required>
+                            <input name="name" class="form-control">
                         </div>
 
                         <div class="col-md-6 mb-2">
                             <label>Phone</label>
-                            <input name="phone" class="form-control" required>
+                            <input name="phone" class="form-control">
                         </div>
 
                         <div class="col-md-6 mb-2">
