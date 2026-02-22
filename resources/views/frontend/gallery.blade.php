@@ -49,6 +49,6 @@
 
         </div>
     </section>
-    <script src="{{ asset('js/gallery/custom_gallery.js') }}"></script>
+    <script src="{{ asset('js/custom_frontend/gallery/custom_gallery.js') }}"></script>
     @include('frontend.welcome_page.footer')
 @endsection

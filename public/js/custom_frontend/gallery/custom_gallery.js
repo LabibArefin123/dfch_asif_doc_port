@@ -54,4 +54,4 @@ document.querySelector(".right-btn").addEventListener("click", () => {
 setInterval(() => {
     let index = (currentIndex + 1) % totalImages;
     showImage(index);
-}, 8000);
+}, 15000);

@@ -139,16 +139,16 @@
     </script>
     {{-- end of land phone js  --}}
 
-    <script src="{{ asset('js/sweet_alert.js') }}"></script> {{-- Sweet Alert Modal JS --}}
-    <script src="{{ asset('js/appointment-modal.js') }}"></script> {{-- Appointment Modal JS --}}
-    <script src="{{ asset('js/phone.js') }}"></script> {{-- Phone Modal JS --}}
-    <script src="{{ asset('js/email.js') }}"></script> {{-- Email Modal JS --}}
-    <script src="{{ asset('js/location.js') }}"></script> {{-- Location Modal JS --}}
-    <script src="{{ asset('js/language.js') }}"></script> {{-- Language Modal JS --}}
-    <script src="{{ asset('js/magnified_image_modal.js') }}"></script> {{-- Magnified Image Modal JS --}}
-    <script src="{{ asset('js/scroll_progress.js') }}"></script> {{-- Scroll Progress JS --}}
-    <script src="{{ asset('js/custom_back_top_button.js') }}"></script> {{-- Back to Top JS --}}
-    <script src="{{ asset('js/custom_footer_modal.js') }}"></script> {{-- Footer Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/appointment-modal.js') }}"></script> {{-- Appointment Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/phone.js') }}"></script> {{-- Phone Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/email.js') }}"></script> {{-- Email Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/location.js') }}"></script> {{-- Location Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/language.js') }}"></script> {{-- Language Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/magnified_image_modal.js') }}"></script> {{-- Magnified Image Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/scroll_progress.js') }}"></script> {{-- Scroll Progress JS --}}
+    <script src="{{ asset('js/custom_frontend/custom_back_top_button.js') }}"></script> {{-- Back to Top JS --}}
+    <script src="{{ asset('js/custom_frontend/custom_footer_modal.js') }}"></script> {{-- Footer Modal JS --}}
 
     @if (!Request::is('login'))
         <!-- Google Translate Library -->
