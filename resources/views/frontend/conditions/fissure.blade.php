@@ -1,6 +1,63 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Anal Fissure')
+
+@section('meta')
+    <meta name="description"
+        content="Anal fissure treatment by Dr. Asif Almas Haque. Learn about fissure symptoms, causes, bleeding, pain during bowel movements, and advanced treatment including Botox and lateral internal sphincterotomy.">
+
+    <meta name="keywords"
+        content="Anal Fissure, Fissure Treatment, Painful Bowel Movement, Blood in Stool, Botox for Fissure, Lateral Internal Sphincterotomy, Colorectal Surgeon, Bangladesh">
+
+    <meta name="author" content="Dr. Asif Almas Haque - Colorectal Surgeon">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Open Graph (Facebook / WhatsApp Preview) -->
+    <meta property="og:title" content="Anal Fissure Treatment | Dr. Asif Almas Haque">
+    <meta property="og:description"
+        content="Pain during bowel movement? Bright red bleeding? Get expert fissure treatment and surgical care from a colorectal specialist.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('uploads/images/welcome_page/conditions/fissure.jpg') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anal Fissure Specialist | Dr. Asif Almas Haque">
+    <meta name="twitter:description"
+        content="Advanced management of anal fissure including Botox and minimally invasive surgery.">
+@endsection
+
+@section('schema')
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalCondition",
+  "name": "Anal Fissure",
+  "description": "An anal fissure is a small tear in the lining of the anal canal causing pain and bleeding during bowel movements.",
+  "associatedAnatomy": {
+    "@type": "AnatomicalStructure",
+    "name": "Anal Canal"
+  },
+  "possibleTreatment": [
+    {
+      "@type": "MedicalTherapy",
+      "name": "Topical Medication"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "Botox Injection"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "Lateral Internal Sphincterotomy"
+    }
+  ]
+}
+</script>
+@endsection
+
 <link rel="stylesheet" href="{{ asset('css/frontend/about/custom_about.css') }}">
 
 @section('content')

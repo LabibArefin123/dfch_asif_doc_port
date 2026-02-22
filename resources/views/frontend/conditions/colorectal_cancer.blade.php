@@ -1,6 +1,56 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Colorectal Cancer')
+
+@section('meta')
+    <meta name="description"
+        content="Learn about colorectal cancer symptoms, causes, screening, and treatment options including colonoscopy, surgery, chemotherapy, and prevention. Early detection saves lives.">
+
+    <meta name="keywords"
+        content="Colorectal Cancer, Colon Cancer, Rectal Cancer, Colonoscopy, Blood in Stool, Colorectal Surgeon, Cancer Treatment, Screening, Bangladesh">
+
+    <meta name="author" content="Dr. Asif Almas Haque - Colorectal Surgeon">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Colorectal Cancer | Symptoms, Screening & Treatment">
+    <meta property="og:description"
+        content="Comprehensive guide on colorectal cancer including risk factors, symptoms, diagnosis, staging, and modern treatment options.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('uploads/images/welcome_page/conditions/colorectal_cancer.jpg') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Colorectal Cancer | Early Detection & Treatment">
+    <meta name="twitter:description"
+        content="Know the warning signs of colorectal cancer and when to consult a colorectal surgeon. Screening after 45 can save lives.">
+@endsection
+
+@section('schema')
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalCondition",
+  "name": "Colorectal Cancer",
+  "description": "Colorectal cancer is a cancer affecting the colon or rectum. Early detection through colonoscopy improves survival rates.",
+  "possibleTreatment": [
+    {
+      "@type": "MedicalTherapy",
+      "name": "Surgery"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "Chemotherapy"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "Radiation Therapy"
+    }
+  ]
+}
+</script>
+@endsection
+
 <link rel="stylesheet" href="{{ asset('css/frontend/about/custom_about.css') }}">
 
 @section('content')

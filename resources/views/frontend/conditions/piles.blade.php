@@ -1,6 +1,36 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Piles Information')
+@section('title', 'Piles Treatment in Bangladesh | Best Piles Doctor in Dhaka')
+
+@section('meta')
+    <meta name="description"
+        content="Looking for the best piles doctor in Dhaka? Dr. Asif Almas Haque is a leading colorectal surgeon in Bangladesh offering advanced piles treatment including laser surgery and haemorrhoidectomy.">
+
+    <meta property="og:title" content="Piles Treatment in Bangladesh | Dr. Asif Almas Haque">
+
+    <meta property="og:description"
+        content="Expert piles treatment in Dhaka by experienced colorectal surgeon. Advanced laser surgery and modern haemorrhoid treatment available.">
+
+    <meta property="og:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url()->current() }}">
+
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "MedicalCondition",
+ "name": "Piles (Haemorrhoids)",
+ "possibleTreatment": {
+   "@type": "MedicalTherapy",
+   "name": "Laser Surgery and Haemorrhoidectomy"
+ }
+}
+</script>
+@endsection
+
 <link rel="stylesheet" href="{{ asset('css/frontend/about/custom_about.css') }}">
 
 @section('content')
@@ -22,7 +52,7 @@
 
                 <!-- Left Column -->
                 <div class="col-lg-8 col-md-12 condition-content" data-aos="fade-up">
-                    <h2 class="doctor-name">Piles (Haemorrhoids)</h2>
+                    <h1>Piles Treatment in Bangladesh (Haemorrhoids)</h1>
 
                     <p>
                         Piles or haemorrhoids are one of the most common diseases in Bangladesh. They are blood-filled anal
@@ -31,7 +61,7 @@
                         anal canal.
                     </p>
 
-                    <h5 class="section-title mt-3">Who Has Piles?</h5>
+                    <h5 class="section-title mt-3">Who Gets Piles?</h5>
                     <p>Piles can occur at any age but are most common in young adults. They are rare in infants and
                         children.</p>
 
@@ -96,7 +126,6 @@
                             </ul>
                         </li>
                     </ul>
-
                 </div>
 
                 <!-- Right Column (Optional Image / Sidebar) -->

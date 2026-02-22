@@ -1,6 +1,63 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Fistula Information')
+
+@section('meta')
+    <meta name="description"
+        content="Learn about anal fistula causes, symptoms, MRI diagnosis, and advanced surgical treatments including fistulotomy, LIFT procedure, seton placement, and minimally invasive options.">
+
+    <meta name="keywords"
+        content="Anal Fistula, Fistula Treatment, Fistulotomy, LIFT Procedure, Seton, MRI Fistulogram, Colorectal Surgeon, Anal Abscess, Bangladesh">
+
+    <meta name="author" content="Dr. Asif Almas Hoque - Colorectal Surgeon">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Open Graph (Facebook / WhatsApp Preview) -->
+    <meta property="og:title" content="Anal Fistula | Symptoms, MRI Diagnosis & Surgical Treatment">
+    <meta property="og:description"
+        content="Comprehensive guide to anal fistula including causes, drainage, pain, MRI fistulogram, and modern surgical options.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('uploads/images/welcome_page/conditions/fistula.jpg') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anal Fistula Treatment | Advanced Surgical Care">
+    <meta name="twitter:description"
+        content="Persistent drainage or anal abscess? Learn about fistula treatment options including LIFT and fistulotomy.">
+@endsection
+
+@section('schema')
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalCondition",
+  "name": "Anal Fistula",
+  "description": "An anal fistula is an abnormal tract between the anal canal and the skin, usually following an abscess.",
+  "associatedAnatomy": {
+    "@type": "AnatomicalStructure",
+    "name": "Anal Canal"
+  },
+  "possibleTreatment": [
+    {
+      "@type": "MedicalTherapy",
+      "name": "Fistulotomy"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "Seton Placement"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "LIFT Procedure"
+    }
+  ]
+}
+</script>
+@endsection
+
 <link rel="stylesheet" href="{{ asset('css/frontend/about/custom_about.css') }}">
 
 @section('content')

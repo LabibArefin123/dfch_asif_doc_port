@@ -1,6 +1,67 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Irritable Bowel Syndrome (IBS)')
+
+@section('meta')
+    <meta name="description"
+        content="Expert Irritable Bowel Syndrome (IBS) treatment by Dr. Asif Almas Haque. Learn about IBS symptoms, causes, risk factors, and effective management including diet, medications, and stress control.">
+
+    <meta name="keywords"
+        content="IBS, Irritable Bowel Syndrome, Abdominal Pain, Bloating, Constipation, Diarrhea, IBS Management, Colorectal Specialist, Bangladesh">
+
+    <meta name="author" content="Dr. Asif Almas Haque - Colorectal Surgeon">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Irritable Bowel Syndrome (IBS) Treatment | Dr. Asif Almas Haque">
+    <meta property="og:description"
+        content="IBS management in Bangladesh: diet, lifestyle, and medical treatment by expert colorectal surgeon Dr. Asif Almas Haque.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('uploads/images/welcome_page/conditions/ibs.jpg') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IBS Treatment Specialist | Dr. Asif Almas Haque">
+    <meta name="twitter:description"
+        content="Learn effective IBS management including diet, medications, stress control, and lifestyle modifications from a colorectal expert.">
+@endsection
+
+@section('schema')
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalCondition",
+  "name": "Irritable Bowel Syndrome (IBS)",
+  "description": "Irritable Bowel Syndrome (IBS) is a common functional disorder of the large intestine, causing abdominal discomfort, bloating, and altered bowel habits.",
+  "associatedAnatomy": {
+    "@type": "AnatomicalStructure",
+    "name": "Large Intestine"
+  },
+  "possibleTreatment": [
+    {
+      "@type": "MedicalTherapy",
+      "name": "Dietary changes"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "Medications (anti-spasmodics, laxatives, anti-diarrheal)"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "Stress management"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "Probiotics"
+    }
+  ]
+}
+</script>
+@endsection
+
 <link rel="stylesheet" href="{{ asset('css/frontend/about/custom_about.css') }}">
 
 @section('content')

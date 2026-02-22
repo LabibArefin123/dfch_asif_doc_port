@@ -1,6 +1,39 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'About Us')
+@section('title', 'About Dr. Asif Almas Haque | Colorectal Surgeon in Bangladesh')
+
+@section('meta')
+<meta name="description" content="Learn about Dr. Asif Almas Haque, a leading colorectal, laparoscopic and laser surgeon in Bangladesh. FRCS (England, Glasgow, Edinburgh), FACS (USA), specialist in piles, fissure, fistula and colorectal cancer surgery in Dhaka.">
+
+<meta property="og:title" content="About Dr. Asif Almas Haque | Colorectal Surgeon in Bangladesh">
+
+<meta property="og:description" content="Consultant colorectal surgeon in Dhaka with international qualifications including FRCS and FACS. Expertise in advanced colorectal and laparoscopic surgery.">
+
+<meta property="og:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
+
+<meta property="og:type" content="profile">
+<meta property="og:url" content="{{ url()->current() }}">
+
+<link rel="canonical" href="{{ url()->current() }}">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Physician",
+ "name": "Dr. Asif Almas Haque",
+ "medicalSpecialty": "Colorectal Surgery",
+ "areaServed": "Bangladesh",
+ "jobTitle": "Consultant Colorectal Surgeon",
+ "alumniOf": [
+   "FRCS England",
+   "FRCS Glasgow",
+   "FRCS Edinburgh",
+   "FACS USA"
+ ]
+}
+</script>
+@endsection
+
 <link rel="stylesheet" href="{{ asset('css/frontend/about/custom_about.css') }}">
 
 @section('content')
