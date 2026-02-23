@@ -25,7 +25,7 @@
                     <li><a href="{{ route('page_1') }}" class="text-white text-decoration-none">Educational
                             Background</a></li>
                     <li><a href="{{ route('page_2') }}" class="text-white text-decoration-none">International
-                            Conference</a></li>
+                            Conference</a></li>     
                     <li><a href="{{ route('page_3') }}" class="text-white text-decoration-none">Journal Publication</a>
                     </li>
                     <li><a href="{{ route('page_4') }}" class="text-white text-decoration-none">Membership</a></li>

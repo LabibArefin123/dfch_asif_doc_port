@@ -64,6 +64,7 @@
     @include('frontend.modal.footer.phone')
     @include('frontend.modal.footer.email')
     @include('frontend.modal.footer.location')
+    
     <!-- Hidden Google Translate Widget -->
     <div id="google_translate_element" style="display:none;"></div>
     <!-- Bootstrap JS + dependencies -->
