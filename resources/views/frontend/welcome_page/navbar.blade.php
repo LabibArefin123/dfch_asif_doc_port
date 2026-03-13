@@ -79,7 +79,7 @@
         </div>
 
         <!-- CTA -->
-        <a href="{{ route('book') }}" class="btn portfolio-btn ml-lg-3">
+        <a href="{{ route('contact') }}" class="btn portfolio-btn ml-lg-3">
             Book Appointment
         </a>
     </div>
