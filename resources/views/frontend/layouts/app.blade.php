@@ -56,8 +56,6 @@
         </main>
 
     </div>
-
-    @include('frontend.modal.appointment')
     @include('frontend.modal.phone')
     @include('frontend.modal.email')
     @include('frontend.modal.location')
@@ -102,7 +100,7 @@
 
     <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
     <script src="{{ asset('js/custom_frontend/contact_success.js') }}"></script> {{-- Contact Success Notification JS --}}
-    <script src="{{ asset('js/custom_frontend/appointment-modal.js') }}"></script> {{-- Appointment Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/navbar-collapse.js') }}"></script> {{-- Appointment Modal JS --}}
     <script src="{{ asset('js/custom_frontend/phone.js') }}"></script> {{-- Phone Modal JS --}}
     <script src="{{ asset('js/custom_frontend/email.js') }}"></script> {{-- Email Modal JS --}}
     <script src="{{ asset('js/custom_frontend/location.js') }}"></script> {{-- Location Modal JS --}}

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('css/frontend/custom_navbar.css') }}">
 
-<nav class="navbar navbar-expand-lg portfolio-navbar fixed-top">
+<nav class="navbar navbar-expand-lg portfolio-navbar fixed-top navbar-overlay">
     <div class="container">
 
         <!-- BRAND -->
@@ -18,8 +18,17 @@
         </a>
 
         <!-- Mobile Toggle -->
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span> </button>
+        <div class="d-flex align-items-center mobile-nav-controls">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <button type="button" class="navbar-close-btn d-none">
+                <i class="fas fa-times"></i>
+            </button>
+
+        </div>
         <!-- Menu -->
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">

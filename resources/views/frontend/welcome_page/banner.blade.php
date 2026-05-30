@@ -23,12 +23,12 @@
                 style="position:absolute; inset:0;">
 
                 <div class="doctor-slide h-100">
-                    <div class="container h-100">
+                    <div class="container h-100">   
                         <div class="row h-100 align-items-center">
 
                             {{-- Image (Left) --}}
                             @if ($slide['align'] === 'left')
-                                <div class="col-md-6 h-100 position-relative order-1 order-md-0">
+                                <div class="col-md-6 h-100 position-relative order-0">
                                     <a href="{{ $slide['route'] }}" class="doctor-image-link">
                                         <img src="{{ asset('uploads/images/welcome_page/slider/' . $slide['image']) }}"
                                             class="doctor-img left" alt="{{ $slide['name'] }}">

@@ -13,6 +13,7 @@ use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SystemProblemController;
+use App\Http\Controllers\Auth\LoginController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -104,6 +105,18 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/settings/theme/update', [SettingController::class, 'updateTheme'])->name('settings.theme.update');
 });
 
-Auth::routes([
-    'register' => false, // disables register
-]);
+require __DIR__ . '/auth.php';
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])
+        ->name('login');
+
+    Route::post('/login', [LoginController::class, 'login']);
+});
+
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+
+    return redirect('/');
+})->name('logout');
