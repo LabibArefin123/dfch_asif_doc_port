@@ -1,4 +1,8 @@
-<link rel="stylesheet" href="{{ asset('css/frontend/custom_banner.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/banner/banner.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/banner/banner-content.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/banner/banner-slider.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/banner/banner-image.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/banner/banner-responsive.css') }}">
 <section id="banner" class="banner-section w-100">
 
     <div id="slider" class="position-relative w-100" style="height:70vh;">
@@ -23,7 +27,7 @@
                 style="position:absolute; inset:0;">
 
                 <div class="doctor-slide h-100">
-                    <div class="container h-100">   
+                    <div class="container h-100">
                         <div class="row h-100 align-items-center">
 
                             {{-- Image (Left) --}}

@@ -62,7 +62,7 @@
     @include('frontend.modal.footer.phone')
     @include('frontend.modal.footer.email')
     @include('frontend.modal.footer.location')
-    
+
     <!-- Hidden Google Translate Widget -->
     <div id="google_translate_element" style="display:none;"></div>
     <!-- Bootstrap JS + dependencies -->
@@ -100,7 +100,9 @@
 
     <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
     <script src="{{ asset('js/custom_frontend/contact_success.js') }}"></script> {{-- Contact Success Notification JS --}}
-    <script src="{{ asset('js/custom_frontend/navbar-collapse.js') }}"></script> {{-- Appointment Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/navbar-collapse.js') }}"></script> {{-- Navbar collapse JS --}}
+    <script src="{{ asset('js/custom_frontend/problem-modal.js') }}"></script> {{-- Problem modal JS --}}
+    <script src="{{ asset('js/custom_frontend/password-toggle.js') }}"></script> {{-- Password toggle JS --}}
     <script src="{{ asset('js/custom_frontend/phone.js') }}"></script> {{-- Phone Modal JS --}}
     <script src="{{ asset('js/custom_frontend/email.js') }}"></script> {{-- Email Modal JS --}}
     <script src="{{ asset('js/custom_frontend/location.js') }}"></script> {{-- Location Modal JS --}}
