@@ -1,52 +1,48 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const navbarCollapse = document.getElementById("navbarCollapse");
-    const toggler = document.querySelector(".navbar-toggler");
-    const closeBtn = document.querySelector(".navbar-close-btn");
+document.addEventListener("DOMContentLoaded", () => {
+    const drawer = document.getElementById("navbarCollapse");
+    const openBtn = document.getElementById("navbarOpenBtn");
+    const closeBtn = document.getElementById("navbarCloseBtn");
     const overlay = document.querySelector(".navbar-overlay");
 
-    function openNavbar() {
-        navbarCollapse.classList.add("show");
+    function openMenu() {
+        drawer.classList.add("show");
         overlay.classList.add("show");
-
-        toggler.classList.add("d-none");
-        closeBtn.classList.remove("d-none");
     }
 
-    function closeNavbar() {
-        navbarCollapse.classList.remove("show");
+    function closeMenu() {
+        drawer.classList.remove("show");
         overlay.classList.remove("show");
 
-        closeBtn.classList.add("d-none");
-        toggler.classList.remove("d-none");
+        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+            menu.classList.remove("show");
+        });
     }
 
-    toggler.addEventListener("click", function (e) {
-        e.preventDefault();
-        openNavbar();
-    });
+    openBtn.addEventListener("click", openMenu);
 
-    closeBtn.addEventListener("click", function () {
-        closeNavbar();
-    });
+    closeBtn.addEventListener("click", closeMenu);
 
-    overlay.addEventListener("click", function () {
-        closeNavbar();
-    });
+    overlay.addEventListener("click", closeMenu);
 
-    document.querySelectorAll("#navbarCollapse a").forEach((link) => {
-        link.addEventListener("click", function () {
-            closeNavbar();
-        });
-    });
-
-    document.addEventListener("click", function (e) {
-        const clickedInsideNavbar =
-            navbarCollapse.contains(e.target) ||
-            toggler.contains(e.target) ||
-            closeBtn.contains(e.target);
-
-        if (!clickedInsideNavbar) {
-            closeNavbar();
+    document.querySelectorAll("#navbarCollapse .nav-link").forEach((link) => {
+        if (!link.classList.contains("dropdown-toggle")) {
+            link.addEventListener("click", closeMenu);
         }
+    });
+
+    document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const menu = this.nextElementSibling;
+
+            document.querySelectorAll(".dropdown-menu").forEach((item) => {
+                if (item !== menu) {
+                    item.classList.remove("show");
+                }
+            });
+
+            menu.classList.toggle("show");
+        });
     });
 });

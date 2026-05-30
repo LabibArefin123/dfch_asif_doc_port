@@ -1,0 +1,36 @@
+/* Main Menu */
+
+.portfolio-menu .nav-item {
+    position: relative;
+}
+
+.portfolio-menu .nav-link {
+    color: #222;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 14px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.portfolio-menu .nav-item:not(.dropdown) .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #111;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+.portfolio-menu .nav-item:not(.dropdown) .nav-link:hover::after,
+.portfolio-menu .nav-item:not(.dropdown) .nav-link.active::after {
+    width: 60%;
+}
+
+.portfolio-menu .nav-link:hover,
+.portfolio-menu .nav-link.active {
+    color: #111;
+}

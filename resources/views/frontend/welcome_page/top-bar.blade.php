@@ -1,5 +1,8 @@
-<link rel="stylesheet" href="{{ asset('css/frontend/custom_topbar.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/frontend/topbar/topbar-base.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/topbar/topbar-info.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/topbar/topbar-links.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/topbar/topbar-social.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/topbar/topbar-responsive.css') }}">
 <div class="portfolio-topbar">
     <div class="container d-flex justify-content-between align-items-center">
 
@@ -48,4 +51,3 @@
 
     </div>
 </div>
-
