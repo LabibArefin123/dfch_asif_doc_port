@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="row g-4 justify-content-center">
+        <div class="membership-grid">
             @php
                 $memberships = [
                     [
@@ -64,10 +64,10 @@
             @endphp
 
             @foreach ($memberships as $membership)
-                <div class="col-md-6 col-lg-4">
+                <div class="membership-item">
                     <a href="{{ $membership['link'] }}" target="_blank" class="text-decoration-none">
 
-                      <div class="membership-card text-center">
+                        <div class="membership-card text-center">
                             <img src="{{ $membership['image'] ?? $defaultImage }}" alt="{{ $membership['name'] }}"
                                 class="membership-img">
 

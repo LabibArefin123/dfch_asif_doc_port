@@ -6,3 +6,15 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+// ======================================
+// NAVBAR
+// ======================================
+
+@import '../scss/navbar/navbar';
+@import '../scss/navbar/brand';
+@import '../scss/navbar/menu';
+@import '../scss/navbar/dropdown';
+@import '../scss/navbar/mobile';
+
+@import '../scss/custom_membership/membership';
