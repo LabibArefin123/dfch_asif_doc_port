@@ -22,6 +22,4 @@
             font-family: 'Poppins', sans-serif;
         }
     </style>
-    <link rel="stylesheet" href="{{ asset('css/backend/login.css') }}">
-   
 @endsection
