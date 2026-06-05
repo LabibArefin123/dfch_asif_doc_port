@@ -1,8 +1,13 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Membership')
-<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_4.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_4/reset.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_4/banner.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_4/profile.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_4/membership-list.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_4/typography.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_4/effects.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_4/responsive.css') }}">
 @section('content')
 
     @include('frontend.welcome_page.header')
@@ -28,7 +33,7 @@
                         <a href="https://www.sosb-bd.org/" target="_blank">
                             Society of Surgeons of Bangladesh
                         </a>
-                         <img src="{{ asset('uploads/images/welcome_page/membership/image_1.png') }}" alt="">
+                        <img src="{{ asset('uploads/images/welcome_page/membership/image_1.png') }}" alt="">
                     </div>
                 </li>
 
@@ -37,7 +42,7 @@
                         <a href="https://selsb-bd.org/" target="_blank">
                             Society of Endo Laparoscopic Surgeons of Bangladesh
                         </a>
-                         <img src="{{ asset('uploads/images/welcome_page/membership/image_2.jpg') }}" alt="">
+                        <img src="{{ asset('uploads/images/welcome_page/membership/image_2.jpg') }}" alt="">
                     </div>
                 </li>
 

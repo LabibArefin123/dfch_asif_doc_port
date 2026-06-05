@@ -1,8 +1,14 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'International Conference')
-<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_2.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_2/reset.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_2/banner.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_2/profile.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_2/construction.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_2/button.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_2/typography.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_2/effects.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_2/responsive.css') }}">
 @section('content')
 
     @include('frontend.welcome_page.header')

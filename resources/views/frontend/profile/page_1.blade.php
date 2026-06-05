@@ -1,7 +1,14 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Educational Background')
-<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_1.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_1/reset.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_1/banner.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_1/profile.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_1/education-table.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_1/lists-content.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_1/typography.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_1/effects.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_1/responsive.css') }}">
 
 @section('content')
 

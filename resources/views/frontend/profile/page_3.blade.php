@@ -1,7 +1,13 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Journal Publication')
-<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_3.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_3/reset.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_3/banner.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_3/profile.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_3/journals.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_3/typography.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_3/effects.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/profile/page_3/responsive.css') }}">
 
 @section('content')
 
